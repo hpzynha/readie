@@ -50,7 +50,7 @@ class _ExplorePageState extends State<ExplorePage> {
                             height: 100,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     image: AssetImage(
                                         'lib/assets/images/bacheloretteNumberFive.jpeg'),
                                     fit: BoxFit.cover)),
