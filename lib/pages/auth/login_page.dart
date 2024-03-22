@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:readie/style.dart';
+import 'package:readie/widgets/buttons.dart';
+import 'package:readie/widgets/text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -17,51 +19,66 @@ class _LoginPageState extends State<LoginPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: [
-          Center(
-            child: Text(
-              "Welcome to Readie",
-              style: TextStyle(
-                color: rPrimaryColor,
-                fontSize: 26,
-              ),
-            ),
-          ),
-          const SizedBox(height: 15),
           Padding(
             padding: const EdgeInsets.only(left: 40, right: 60),
             child: Column(
               children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    labelText: "email",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(16),
-                      ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Email',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: rPrimaryColor),
                     ),
-                  ),
+                    const SizedBox(height: 10),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 9, bottom: 5),
-                  child: TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(16),
-                        ),
-                      ),
+                const SizedBox(height: 10),
+                const LoginTextFormField(hintText: 'Enter your email'),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Password',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: rPrimaryColor),
                     ),
-                  ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                const LoginTextFormField(
+                  hintText: 'Enter your password',
                 ),
                 const SizedBox(height: 16),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  mainAxisSize: MainAxisSize.min,
+                Column(
                   children: [
-                    OutlinedButton(onPressed: () {}, child: Text("Login")),
-                    const SizedBox(width: 10),
-                    OutlinedButton(onPressed: () {}, child: Text("Sign Up")),
+                    const LoginSignupButton(),
+                    const SizedBox(height: 24),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            color: rSecondaryTextColor,
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text('Or login with',
+                              style: TextStyle(color: Colors.grey)),
+                        ),
+                        Expanded(
+                            child: Divider(
+                          color: rSecondaryTextColor,
+                          height: 24,
+                        ))
+                      ],
+                    )
                   ],
                 )
               ],
