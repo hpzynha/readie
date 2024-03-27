@@ -1,26 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:readie/style.dart';
 
-class LoginSignupButton extends StatelessWidget {
-  const LoginSignupButton({super.key});
+class PrimaryButton extends StatelessWidget {
+  const PrimaryButton(
+      {super.key, required this.title, required this.onPressed});
+
+  final String title;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: rProgressbarColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width,
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      child: Container(
+        decoration: BoxDecoration(
+          color: rPrimaryColor,
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: OutlinedButton(
-          onPressed: () {},
-          child: const Text(
-            "Login",
-            style: TextStyle(color: Colors.white),
+          onPressed: onPressed,
+          style: OutlinedButton.styleFrom(
+            side: BorderSide.none,
+          ),
+          child: Text(
+            title,
+            style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.normal),
           ),
         ),
       ),
     );
   }
+}
+
+Widget textButton({
+  required String text,
+  required Function() onPress,
+  required Color color,
+}) {
+  return TextButton(
+    onPressed: onPress,
+    child: Text(
+      text,
+      style: TextStyle(
+        color: color,
+        fontSize: 16,
+      ),
+    ),
+  );
 }

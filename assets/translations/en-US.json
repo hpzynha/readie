@@ -1,13 +1,14 @@
 {
     "login": {
-        "forgotMyPassword": "Esqueci minha senha",
+        "forgotPassword": "Forgot password?",
         "email": "Email",
         "password": "Password",
         "login": "Login",
         "loginToUseTheApp": "Login to use the App",
         "enterEmail": "Enter your email",
         "enterPassword": "Enter your password",
-        "fieldCannotBeEmpty": "Field cannot be empty"    
+        "fieldCannotBeEmpty": "Field cannot be empty",
+        "orLoginWith": "Or login with"  
     },
     "createAccount": {
         "createAccount": "Criar uma conta",

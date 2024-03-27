@@ -22,7 +22,7 @@ void main() async {
 }
 
 class ReadieApp extends StatelessWidget {
-  const ReadieApp({Key? key}) : super(key: key);
+  const ReadieApp({super.key});
 
   @override
   Widget build(BuildContext context) {

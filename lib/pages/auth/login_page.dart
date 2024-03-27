@@ -61,17 +61,16 @@ class _LoginPageState extends State<LoginPage> {
                           fontSize: 16,
                           color: rTitleBlackColor),
                     ),
-                    const SizedBox(height: 10),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const LoginTextFormField(hintText: 'Enter your email'),
-                const SizedBox(height: 10),
+                const SizedBox(height: 12),
+                LoginTextFormField(hintText: 'login.enterEmail'.tr()),
+                const SizedBox(height: 12),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Password',
+                      'login.password'.tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -79,34 +78,62 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
-                const LoginTextFormField(
-                  hintText: 'Enter your password',
+                const SizedBox(height: 12),
+                LoginTextFormField(
+                  hintText: 'login.enterPassword'.tr(),
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 32),
                 Column(
                   children: [
-                    const LoginSignupButton(),
-                    const SizedBox(height: 24),
+                    PrimaryButton(
+                      title: 'login.login'.tr(),
+                      onPressed: () {},
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        textButton(
+                          text: 'login.forgotPassword'.tr(),
+                          onPress: () {},
+                          color: rSecondaryTextColor,
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 30),
                     Row(
                       children: [
                         Expanded(
                           child: Divider(
-                            color: rTitleBlackColor,
+                            color: rSecondaryTextColor,
                           ),
                         ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text('Or login with',
-                              style: TextStyle(color: Colors.grey)),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Text('login.orLoginWith'.tr(),
+                              style: TextStyle(color: rSecondaryTextColor)),
                         ),
                         Expanded(
                             child: Divider(
-                          color: rTitleBlackColor,
+                          color: rSecondaryTextColor,
                           height: 24,
                         ))
                       ],
-                    )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('Dont have an account?',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                            )),
+                        textButton(
+                            text: 'Register',
+                            onPress: () {},
+                            color: rPrimaryColor)
+                      ],
+                    ),
                   ],
                 )
               ],
