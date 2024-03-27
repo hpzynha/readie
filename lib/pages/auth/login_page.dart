@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                          color: rPrimaryColor),
+                          color: rTitleBlackColor),
                     ),
                     const SizedBox(height: 10),
                   ],
@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                          color: rPrimaryColor),
+                          color: rTitleBlackColor),
                     ),
                   ],
                 ),
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Expanded(
                           child: Divider(
-                            color: rSecondaryTextColor,
+                            color: rTitleBlackColor,
                           ),
                         ),
                         const Padding(
@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Expanded(
                             child: Divider(
-                          color: rSecondaryTextColor,
+                          color: rTitleBlackColor,
                           height: 24,
                         ))
                       ],
