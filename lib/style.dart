@@ -12,4 +12,4 @@ Color rRatingColor = const Color(0xFfFCA311);
 
 Color rTitleBlackColor = const Color(0XFF000000);
 
-Color rSecondaryTextColor = const Color(0XFFF2F2F2);
+Color rSecondaryTextColor = const Color(0xFFBDBDBD);

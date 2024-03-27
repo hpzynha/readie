@@ -17,7 +17,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    print('Translated String: ${'login.login'.tr()}');
     return Scaffold(
       body: Column(
         children: [
@@ -30,7 +29,28 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.only(left: 40, right: 60),
             child: Column(
               children: [
-                Text('login.login'.tr()),
+                Row(
+                  children: [
+                    Text(
+                      'login.login'.tr(),
+                      style: const TextStyle(
+                          fontSize: 24, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Row(
+                  children: [
+                    Text(
+                      'login.loginToUseTheApp'.tr(),
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 29),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [

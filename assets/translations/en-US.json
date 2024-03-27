@@ -4,8 +4,10 @@
         "email": "Email",
         "password": "Password",
         "login": "Login",
-        "enter": "Entrar",
-        "fieldCannotBeEmpty": "Campo obrigatório"    
+        "loginToUseTheApp": "Login to use the App",
+        "enterEmail": "Enter your email",
+        "enterPassword": "Enter your password",
+        "fieldCannotBeEmpty": "Field cannot be empty"    
     },
     "createAccount": {
         "createAccount": "Criar uma conta",
