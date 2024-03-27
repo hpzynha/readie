@@ -15,8 +15,7 @@ class SplashPage extends StatelessWidget {
       splash: Column(
         children: [
           Image(
-            image: SvgImage.asset(
-                '/Users/dev.lari/Development/readie/lib/assets/images/readieWhiteLogo.svg'),
+            image: SvgImage.asset('assets/images/readieWhiteLogo.svg'),
           ),
           const Text(
             'Bound by pages, connected by tales.',

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_image/flutter_svg_image.dart';
 
 import 'package:readie/style.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/text_form_field.dart';
+
+import 'package:easy_localization/easy_localization.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,20 +17,25 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    print('Translated String: ${'login.login'.tr()}');
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
         children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 100),
+            child:
+                Image(image: SvgImage.asset('assets/images/PrimaryLogo.svg')),
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 40, right: 60),
             child: Column(
               children: [
+                Text('login.login'.tr()),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Email',
+                      'login.email'.tr(),
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,

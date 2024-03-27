@@ -1,0 +1,31 @@
+{
+    "login": {
+        "forgotMyPassword": "Esqueci minha senha",
+        "email": "Email",
+        "password": "Password",
+        "login": "Login",
+        "enter": "Entrar",
+        "fieldCannotBeEmpty": "Campo obrigatório"    
+    },
+    "createAccount": {
+        "createAccount": "Criar uma conta",
+        "register": "Cadastro",
+        "typeYourData": "Digite seus Dados",
+        "name": "Nome",
+        "lastName": "Sobrenome",
+        "email": "E-mail",
+        "phoneNumber": "Melhor número para contato",
+        "choosePassword": "Escolha uma senha",
+        "minimumCharacters": "Mínimo de 8 caracteres",
+        "password": "Senha",
+        "repeatPassword": "Repita a senha",
+        "number": "(00) 00000-0000",
+        "create": "Criar conta",
+        "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
+        "backToLogin": "Voltar para a tela de login",
+        "passwordNotMacth": "As senhas devem ser iguais",
+        "fieldCannotBeEmpty": "Campo obrigatório"
+    }
+
+    
+}
