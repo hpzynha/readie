@@ -8,7 +8,9 @@
         "enterEmail": "Enter your email",
         "enterPassword": "Enter your password",
         "fieldCannotBeEmpty": "Field cannot be empty",
-        "orLoginWith": "Or login with"  
+        "orLoginWith": "Or login with",
+        "register": "Register"
+       
     },
     "createAccount": {
         "createAccount": "Criar uma conta",
@@ -28,6 +30,14 @@
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
         "fieldCannotBeEmpty": "Campo obrigatório"
+    },
+
+    "forgotPassword":{
+        "forgotPassword": "Forgot password?",
+        "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account.",
+        "email": "Email",
+        "enterEmail": "Enter your email",
+        "sendCode": "Send Code"
     }
 
     

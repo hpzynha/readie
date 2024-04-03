@@ -51,3 +51,10 @@ Widget textButton({
     ),
   );
 }
+
+Widget LogoButton({
+  required Function() onPress,
+  required Icon icon,
+}) {
+  return IconButton(onPressed: onPress, icon: icon);
+}

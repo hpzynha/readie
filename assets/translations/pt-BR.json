@@ -7,7 +7,8 @@
         "loginToUseTheApp": "Entre para usar o app",
         "enterEmail": "",
         "enterPassword": "",
-        "fieldCannotBeEmpty": "Campo obrigatório"    
+        "fieldCannotBeEmpty": "Campo obrigatório",
+        "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account." 
     },
     "createAccount": {
         "createAccount": "Criar uma conta",

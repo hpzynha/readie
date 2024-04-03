@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "326162704811",
+    "project_id": "readie-auth",
+    "storage_bucket": "readie-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326162704811:android:d2ae018f7cfaf39bf38aee",
+        "android_client_info": {
+          "package_name": "com.example.readie"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4tgog2R85zROY8dwhkw2rhzXP_1mEOCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

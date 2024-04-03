@@ -34,7 +34,12 @@ class _BottomAppbarController extends State<BottomAppbarController> {
     return Scaffold(
       backgroundColor: rBackgroundColor,
       appBar: AppBar(
-        leading: const Icon(Icons.location_on),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios_new),
+        ),
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
