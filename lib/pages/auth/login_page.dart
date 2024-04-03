@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.only(left: 40, right: 60),
             child: Column(
               children: [
-                TextTitle(
+                textTitle(
                   title: 'login.login'.tr(),
                   text: 'login.loginToUseTheApp'.tr(),
                 ),
@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Row(
                   children: [
-                    LogoButton(onPress: () {}, icon: Icon(Icons.face)),
+                    logoButton(onPress: () {}, icon: const Icon(Icons.face)),
                   ],
                 ),
                 Row(

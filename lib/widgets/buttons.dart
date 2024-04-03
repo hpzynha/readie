@@ -52,7 +52,7 @@ Widget textButton({
   );
 }
 
-Widget LogoButton({
+Widget logoButton({
   required Function() onPress,
   required Icon icon,
 }) {

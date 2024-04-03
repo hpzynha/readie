@@ -27,7 +27,7 @@ class ForgotPasswordPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextTitle(
+            textTitle(
               title: 'forgotPassword.forgotPassword'.tr(),
               text: 'forgotPassword.subtitleForgotPassword'.tr(),
             ),
