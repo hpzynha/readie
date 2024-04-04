@@ -129,7 +129,9 @@ class _LoginPageState extends State<LoginPage> {
                         )),
                     textButton(
                         text: 'login.register'.tr(),
-                        onPress: () {},
+                        onPress: () {
+                          Navigator.pushNamed(context, '/register');
+                        },
                         color: rPrimaryColor)
                   ],
                 )

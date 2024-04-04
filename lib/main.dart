@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:readie/pages/splash_page.dart';
 
 import 'package:easy_localization/easy_localization.dart';
+import 'package:readie/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +34,9 @@ class ReadieApp extends StatelessWidget {
       title: 'READIE',
       debugShowCheckedModeBanner: false,
       theme: _buildTheme(),
-      home: const SplashPage(),
+      initialRoute: Routes.initial,
+      routes: Routes.list,
+      navigatorKey: Routes.navigatorKey,
     );
   }
 
