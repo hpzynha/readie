@@ -1,13 +1,17 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:readie/routes.dart';
+import 'package:readie/widget_tree.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await EasyLocalization.ensureInitialized();
+
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]).then(
     (value) => runApp(
       EasyLocalization(
@@ -36,7 +40,6 @@ class ReadieApp extends StatelessWidget {
       theme: _buildTheme(),
       initialRoute: Routes.initial,
       routes: Routes.list,
-      navigatorKey: Routes.navigatorKey,
     );
   }
 

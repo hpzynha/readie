@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
+import 'package:readie/pages/home_page.dart';
 
 import 'package:readie/style.dart';
-import 'package:readie/widgets/bottom_appbar_controller.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/text_form_field.dart';
 
@@ -51,8 +49,8 @@ class _LoginPageState extends State<LoginPage> {
                 PrimaryButton(
                   title: 'login.login'.tr(),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (ctx) => const BottomAppbarController()));
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (ctx) => HomePage()));
                   },
                 ),
                 const SizedBox(height: 20),
