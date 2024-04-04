@@ -69,8 +69,15 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Widget _submitButton() {
     return ElevatedButton(
-      onPressed:
-          isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
+      onPressed: () async {
+        if (isLogin) {
+          await signInWithEmailAndPassword();
+        } else {
+          await createUserWithEmailAndPassword();
+        }
+        Navigator.pushNamed(context, '/home');
+      },
+      // isLogin ? signInWithEmailAndPassword : createUserWithEmailAndPassword,
       child: Text(isLogin ? 'Login' : 'Register'),
     );
   }
