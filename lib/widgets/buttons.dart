@@ -54,7 +54,16 @@ Widget textButton({
 
 Widget logoButton({
   required Function() onPress,
-  required Icon icon,
+  required Widget widget,
 }) {
-  return IconButton(onPressed: onPress, icon: icon);
+  return SizedBox(
+    height: 50,
+    width: 80,
+    child: OutlinedButton(
+      style: OutlinedButton.styleFrom(
+          side: const BorderSide(width: 1.0, color: Colors.grey)),
+      onPressed: () {},
+      child: widget,
+    ),
+  );
 }

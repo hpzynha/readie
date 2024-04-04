@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/style.dart';
 
-Widget TextTitle({required String title, required String text}) {
+Widget textTitle({required String title, required String text}) {
   return Column(children: [
     Row(
       children: [

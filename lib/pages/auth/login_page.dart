@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
 
@@ -87,9 +89,34 @@ class _LoginPageState extends State<LoginPage> {
                     ))
                   ],
                 ),
+                const SizedBox(
+                  height: 20,
+                ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    logoButton(onPress: () {}, icon: const Icon(Icons.face)),
+                    logoButton(
+                      onPress: () {},
+                      widget: const Icon(
+                        Icons.facebook,
+                        size: 32,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    logoButton(
+                      onPress: () {},
+                      widget: Image.network(
+                          'http://pngimg.com/uploads/google/google_PNG19635.png',
+                          fit: BoxFit.cover),
+                    ),
+                    logoButton(
+                      onPress: () {},
+                      widget: const Icon(
+                        Icons.apple,
+                        size: 32,
+                        color: Colors.black,
+                      ),
+                    ),
                   ],
                 ),
                 Row(
