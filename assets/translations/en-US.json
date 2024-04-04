@@ -12,24 +12,22 @@
         "register": "Register"
        
     },
-    "createAccount": {
-        "createAccount": "Criar uma conta",
-        "register": "Cadastro",
-        "typeYourData": "Digite seus Dados",
-        "name": "Nome",
-        "lastName": "Sobrenome",
-        "email": "E-mail",
-        "phoneNumber": "Melhor número para contato",
-        "choosePassword": "Escolha uma senha",
-        "minimumCharacters": "Mínimo de 8 caracteres",
-        "password": "Senha",
-        "repeatPassword": "Repita a senha",
-        "number": "(00) 00000-0000",
-        "create": "Criar conta",
+    "register": {
+        "register": "Register",
+        "personalInformation": "Enter your personal information",
+        "name": "Name",
+        "enterName": "Enter your name",
+        "email": "Email",
+        "password": "Password",
+        "enterEmail": "Enter your email",
+        "enterPassword": "Enter your password",
+        "comfirmPassword": "Comfirm Password",
+        "enterComfirmPassword": "Enter Comfirm Password",
+        "minimumCharacters": "Mínimo de 8 caracteres",    
         "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
-        "fieldCannotBeEmpty": "Campo obrigatório"
+        "fieldCannotBeEmpty": "Field cannot be empty"
     },
 
     "forgotPassword":{
