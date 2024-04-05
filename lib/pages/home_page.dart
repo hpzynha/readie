@@ -3,13 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:readie/auth.dart';
 import 'package:readie/style.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final User? user = Auth().currentUser;
 
-  Future<void> signOut() async {
+  Future<void> signOut(BuildContext context) async {
+    final NavigatorState navigator = Navigator.of(context);
     await Auth().signOut();
+    navigator.pushNamed('/login');
   }
 
   Widget _title() {
@@ -20,9 +27,9 @@ class HomePage extends StatelessWidget {
     return Text(user?.email ?? 'User email');
   }
 
-  Widget _signOutButton() {
+  Widget _signOutButton(BuildContext context) {
     return ElevatedButton(
-      onPressed: signOut,
+      onPressed: () => signOut(context),
       child: const Text('Sign Out'),
     );
   }
@@ -51,7 +58,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _userUid(),
-            _signOutButton(),
+            _signOutButton(context),
           ],
         ),
       ),
