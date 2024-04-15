@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
@@ -18,6 +19,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String? errorMessage = '';
+  bool isLogin = true;
+  final TextEditingController _controllerEmail = TextEditingController();
+  final TextEditingController _controllerPassword = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,19 +44,28 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 29),
                 LoginTextFormField(
+                    controller: _controllerEmail,
+                    obscureText: false,
                     title: 'login.email'.tr(),
                     hintText: 'login.enterEmail'.tr()),
                 const SizedBox(height: 12),
                 LoginTextFormField(
+                  controller: _controllerPassword,
+                  obscureText: true,
+                  validator: (val) =>
+                      val!.length < 6 ? 'Password too short' : null,
                   title: 'login.password'.tr(),
                   hintText: 'login.enterPassword'.tr(),
                 ),
                 const SizedBox(height: 32),
                 PrimaryButton(
                   title: 'login.login'.tr(),
-                  onPressed: () {
-                    Navigator.of(context)
-                        .push(MaterialPageRoute(builder: (ctx) => HomePage()));
+                  onPressed: () async {
+                    if (isLogin) {
+                      login();
+                    } else {
+                      debugPrint('LOG: Email is empty or password is invalid');
+                    }
                   },
                 ),
                 const SizedBox(height: 20),
@@ -139,5 +154,19 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  Future<void> login() async {
+    final auth = FirebaseAuth.instance;
+    try {
+      await auth.signInWithEmailAndPassword(
+        email: _controllerEmail.text,
+        password: _controllerPassword.text,
+      );
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    } catch (e) {
+      print('Login error: $e');
+    }
   }
 }

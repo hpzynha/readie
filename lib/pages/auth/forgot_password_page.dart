@@ -5,9 +5,15 @@ import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/text_form_field.dart';
 import 'package:readie/widgets/text_widgets.dart';
 
-class ForgotPasswordPage extends StatelessWidget {
+class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
 
+  @override
+  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+}
+
+class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
+  final TextEditingController _controllerEmail = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +39,8 @@ class ForgotPasswordPage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             LoginTextFormField(
+              controller: _controllerEmail,
+              obscureText: false,
               title: 'forgotPassword.email'.tr(),
               hintText: 'forgotPassword.enterEmail'.tr(),
             ),

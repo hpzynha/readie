@@ -3,10 +3,18 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/style.dart';
 
 class LoginTextFormField extends StatelessWidget {
-  const LoginTextFormField({super.key, this.hintText, required this.title});
+  const LoginTextFormField(
+      {super.key,
+      this.hintText,
+      required this.title,
+      required this.controller,
+      this.validator,
+      required this.obscureText});
   final String? hintText;
   final String title;
-
+  final TextEditingController controller;
+  final String? Function(String?)? validator;
+  final bool obscureText;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,6 +37,9 @@ class LoginTextFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           child: TextFormField(
+            controller: controller,
+            validator: validator,
+            obscureText: obscureText,
             autofocus: true,
             decoration: InputDecoration(
               labelText: "",
