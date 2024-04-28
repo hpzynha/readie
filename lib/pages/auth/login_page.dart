@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
-import 'package:readie/pages/home_page.dart';
 
 import 'package:readie/style.dart';
 import 'package:readie/widgets/buttons.dart';
@@ -19,10 +18,53 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String? errorMessage = '';
-  bool isLogin = true;
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
+
+  Future<void> loginUser() async {
+    final email = _controllerEmail.text.trim();
+    final password = _controllerPassword.text.trim();
+    final auth = FirebaseAuth.instance;
+    if (email.isEmpty || password.isEmpty) {
+      showErrorMessage('Please enter both email and password');
+      return;
+    }
+    //Show loading circle
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+
+    try {
+      await auth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      if (mounted) {
+        Navigator.pop(context);
+      }
+    } on FirebaseAuthException catch (e) {
+      if (mounted) {
+        Navigator.pop(context);
+      }
+      // Wrong email or password
+      showErrorMessage(e.code);
+    }
+  }
+
+  void showErrorMessage(String errorMessage) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: Text(errorMessage),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +100,7 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: 'login.enterPassword'.tr(),
                 ),
                 const SizedBox(height: 32),
-                PrimaryButton(
-                  title: 'login.login'.tr(),
-                  onPressed: () async {
-                    if (isLogin) {
-                      login();
-                    } else {
-                      debugPrint('LOG: Email is empty or password is invalid');
-                    }
-                  },
-                ),
+                PrimaryButton(title: 'login.login'.tr(), onPressed: loginUser),
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -154,19 +187,5 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
-  }
-
-  Future<void> login() async {
-    final auth = FirebaseAuth.instance;
-    try {
-      await auth.signInWithEmailAndPassword(
-        email: _controllerEmail.text,
-        password: _controllerPassword.text,
-      );
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => HomePage()));
-    } catch (e) {
-      print('Login error: $e');
-    }
   }
 }

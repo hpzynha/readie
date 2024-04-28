@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:readie/auth.dart';
+import 'package:readie/service/auth_service.dart';
 import 'package:readie/style.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,11 +11,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final User? user = Auth().currentUser;
+  final User? user = AuthService().currentUser;
 
   Future<void> signOut(BuildContext context) async {
     final NavigatorState navigator = Navigator.of(context);
-    await Auth().signOut();
+    await AuthService().signOut();
     navigator.pushNamed('/login');
   }
 
