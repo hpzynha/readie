@@ -87,13 +87,13 @@ class _LoginPageState extends State<LoginPage> {
                   text: 'login.loginToUseTheApp'.tr(),
                 ),
                 const SizedBox(height: 29),
-                LoginTextFormField(
+                CustomAuthTextFormField(
                     controller: _controllerEmail,
                     obscureText: false,
                     title: 'login.email'.tr(),
                     hintText: 'login.enterEmail'.tr()),
                 const SizedBox(height: 12),
-                LoginTextFormField(
+                CustomAuthTextFormField(
                   controller: _controllerPassword,
                   obscureText: true,
                   validator: (val) =>

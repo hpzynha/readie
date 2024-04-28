@@ -38,7 +38,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               text: 'forgotPassword.subtitleForgotPassword'.tr(),
             ),
             const SizedBox(height: 20),
-            LoginTextFormField(
+            CustomAuthTextFormField(
               controller: _controllerEmail,
               obscureText: false,
               title: 'forgotPassword.email'.tr(),

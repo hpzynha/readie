@@ -98,20 +98,20 @@ class _RegisterPageState extends State<RegisterPage> {
                   text: 'register.personalInformation'.tr(),
                 ),
                 const SizedBox(height: 29),
-                LoginTextFormField(
+                CustomAuthTextFormField(
                     controller: _controllerEmail,
                     obscureText: false,
                     title: 'register.email'.tr(),
                     hintText: 'register.enterEmail'.tr()),
                 const SizedBox(height: 12),
-                LoginTextFormField(
+                CustomAuthTextFormField(
                   controller: _controllerPassword,
                   obscureText: true,
                   title: 'register.password'.tr(),
                   hintText: 'register.enterPassword'.tr(),
                 ),
                 const SizedBox(height: 12),
-                LoginTextFormField(
+                CustomAuthTextFormField(
                   controller: _controllerConfirmPassword,
                   obscureText: true,
                   title: 'register.comfirmPassword'.tr(),

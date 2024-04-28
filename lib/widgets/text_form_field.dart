@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/style.dart';
 
-class LoginTextFormField extends StatelessWidget {
-  const LoginTextFormField(
+class CustomAuthTextFormField extends StatelessWidget {
+  const CustomAuthTextFormField(
       {super.key,
       this.hintText,
       required this.title,
