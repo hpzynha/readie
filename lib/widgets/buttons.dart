@@ -25,9 +25,7 @@ class PrimaryButton extends StatelessWidget {
           child: Text(
             title,
             style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.normal),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -42,12 +40,17 @@ Widget textButton({
 }) {
   return TextButton(
     onPressed: onPress,
+    style: ButtonStyle(
+      overlayColor: MaterialStateProperty.resolveWith<Color>(
+        (states) {
+          return rPrimaryColor
+              .withOpacity(0.1); // Set overlay color to transparent
+        },
+      ),
+    ),
     child: Text(
       text,
-      style: TextStyle(
-        color: color,
-        fontSize: 16,
-      ),
+      style: TextStyle(color: color, fontSize: 16),
     ),
   );
 }

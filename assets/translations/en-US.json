@@ -22,12 +22,20 @@
         "enterEmail": "Enter your email",
         "enterPassword": "Enter your password",
         "comfirmPassword": "Comfirm Password",
-        "enterComfirmPassword": "Enter Comfirm Password",
+        "enterComfirmPassword": "Enter comfirm Password",
         "minimumCharacters": "Mínimo de 8 caracteres",    
         "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
         "fieldCannotBeEmpty": "Field cannot be empty"
+    },
+    "errorMessageDialog":{
+        "titleDialog": "Login Failed",
+        "buttonDialog": "OK",
+        "errorMessageLogin": "Wrong username or password. Please try again!",
+        "errorMessagePassword": "Passwords do not match. Please try again!"
+
+       
     },
 
     "forgotPassword":{

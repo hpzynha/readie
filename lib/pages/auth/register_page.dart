@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/style.dart';
+import 'package:readie/widgets/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/text_form_field.dart';
 import 'package:readie/widgets/text_widgets.dart';
@@ -17,6 +18,60 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
+  final TextEditingController _controllerConfirmPassword =
+      TextEditingController();
+
+  void registerUser() {
+    final email = _controllerEmail.text.trim();
+    final password = _controllerPassword.text.trim();
+    final auth = FirebaseAuth.instance;
+
+    //Show loading circle
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(
+            color: Colors.blue,
+          ),
+        );
+      },
+    );
+    try {
+      if (_controllerPassword.text == _controllerConfirmPassword.text) {
+        auth.createUserWithEmailAndPassword(
+          email: email,
+          password: password,
+        );
+      } else {
+        throw FirebaseAuthException(
+          code: 'password-mismatch',
+          message: 'Passwords do not match',
+        );
+      }
+      if (mounted) {
+        Navigator.pop(context);
+      }
+    } on FirebaseAuthException {
+      if (mounted) {
+        Navigator.pop(context);
+      }
+      showErrorMessage();
+    }
+  }
+
+  void showErrorMessage() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return customShowAlertDialog(
+              title: 'errorMessageDialog.titleDialog'.tr(),
+              content: 'errorMessageDialog.errorMessagePassword'.tr(),
+              buttonText: 'errorMessageDialog.buttonDialog'.tr(),
+              onPress: () => Navigator.pop(context));
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,15 +110,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   title: 'register.password'.tr(),
                   hintText: 'register.enterPassword'.tr(),
                 ),
+                const SizedBox(height: 12),
+                LoginTextFormField(
+                  controller: _controllerConfirmPassword,
+                  obscureText: true,
+                  title: 'register.comfirmPassword'.tr(),
+                  hintText: 'register.enterComfirmPassword'.tr(),
+                ),
                 const SizedBox(height: 32),
                 PrimaryButton(
                   title: 'register.register'.tr(),
-                  onPressed: () {
-                    final auth = FirebaseAuth.instance;
-                    auth.createUserWithEmailAndPassword(
-                        email: _controllerEmail.text,
-                        password: _controllerPassword.text);
-                  },
+                  onPressed: registerUser,
                 ),
               ],
             ),

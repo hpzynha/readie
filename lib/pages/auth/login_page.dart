@@ -4,6 +4,7 @@ import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
 
 import 'package:readie/style.dart';
+import 'package:readie/widgets/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/text_form_field.dart';
 
@@ -25,16 +26,15 @@ class _LoginPageState extends State<LoginPage> {
     final email = _controllerEmail.text.trim();
     final password = _controllerPassword.text.trim();
     final auth = FirebaseAuth.instance;
-    if (email.isEmpty || password.isEmpty) {
-      showErrorMessage('Please enter both email and password');
-      return;
-    }
+
     //Show loading circle
     showDialog(
       context: context,
       builder: (context) {
         return const Center(
-          child: CircularProgressIndicator(),
+          child: CircularProgressIndicator(
+            color: Colors.blue,
+          ),
         );
       },
     );
@@ -47,22 +47,24 @@ class _LoginPageState extends State<LoginPage> {
       if (mounted) {
         Navigator.pop(context);
       }
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       if (mounted) {
         Navigator.pop(context);
       }
       // Wrong email or password
-      showErrorMessage(e.code);
+      showErrorMessage();
     }
   }
 
-  void showErrorMessage(String errorMessage) {
+  void showErrorMessage() {
     showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            title: Text(errorMessage),
-          );
+          return customShowAlertDialog(
+              title: 'errorMessageDialog.titleDialog'.tr(),
+              content: 'errorMessageDialog.errorMessageLogin'.tr(),
+              buttonText: 'errorMessageDialog.buttonDialog'.tr(),
+              onPress: () => Navigator.pop(context));
         });
   }
 
@@ -115,7 +117,7 @@ class _LoginPageState extends State<LoginPage> {
                     )
                   ],
                 ),
-                const SizedBox(height: 30),
+                const SizedBox(height: 10),
                 Row(
                   children: [
                     Expanded(
@@ -139,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     logoButton(
                       onPress: () {},
@@ -149,19 +151,12 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.blue,
                       ),
                     ),
+                    const SizedBox(width: 20),
                     logoButton(
                       onPress: () {},
                       widget: Image.network(
                           'http://pngimg.com/uploads/google/google_PNG19635.png',
                           fit: BoxFit.cover),
-                    ),
-                    logoButton(
-                      onPress: () {},
-                      widget: const Icon(
-                        Icons.apple,
-                        size: 32,
-                        color: Colors.black,
-                      ),
                     ),
                   ],
                 ),
