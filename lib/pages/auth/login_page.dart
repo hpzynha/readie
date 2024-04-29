@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
+import 'package:readie/service/auth_service.dart';
 
 import 'package:readie/style.dart';
 import 'package:readie/widgets/alert_dialog.dart';
@@ -164,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     const SizedBox(width: 20),
                     logoButton(
-                      onPress: () {},
+                      onPress: () => AuthService().signInWithGoogle(),
                       widget: Image.network(
                         'http://pngimg.com/uploads/google/google_PNG19635.png',
                         fit: BoxFit.cover,

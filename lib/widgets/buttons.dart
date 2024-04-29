@@ -76,7 +76,7 @@ Widget logoButton({
           const EdgeInsets.all(0.5),
         ),
       ),
-      onPressed: () {},
+      onPressed: onPress,
       child: widget,
     ),
   );
