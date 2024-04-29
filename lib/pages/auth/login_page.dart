@@ -88,24 +88,31 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 const SizedBox(height: 29),
                 CustomAuthTextFormField(
-                    controller: _controllerEmail,
-                    obscureText: false,
-                    showVisibilityIcon: false,
-                    title: 'login.email'.tr(),
-                    hintText: 'login.enterEmail'.tr()),
+                  controller: _controllerEmail,
+                  obscureText: false,
+                  showVisibilityIcon: false,
+                  validateEmail: true,
+                  icon: const Icon(Icons.email),
+                  title: 'login.email'.tr(),
+                  hintText: 'login.enterEmail'.tr(),
+                  fieldType: FieldType.email,
+                ),
                 const SizedBox(height: 12),
                 CustomAuthTextFormField(
                   controller: _controllerPassword,
                   obscureText: true,
                   showVisibilityIcon: true,
+                  validateEmail: false,
+                  icon: const Icon(
+                    Icons.lock,
+                  ),
                   validator: (val) =>
                       val!.length < 6 ? 'Password too short' : null,
                   title: 'login.password'.tr(),
                   hintText: 'login.enterPassword'.tr(),
+                  fieldType: FieldType.password,
                 ),
-                const SizedBox(height: 32),
-                PrimaryButton(title: 'login.login'.tr(), onPressed: loginUser),
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
@@ -115,11 +122,13 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (ctx) => const ForgotPasswordPage()));
                       },
-                      color: rSecondaryTextColor,
+                      color: rPrimaryColor,
                     )
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 20),
+                PrimaryButton(title: 'login.login'.tr(), onPressed: loginUser),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(

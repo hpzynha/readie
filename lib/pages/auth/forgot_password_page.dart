@@ -41,9 +41,12 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             CustomAuthTextFormField(
               controller: _controllerEmail,
               obscureText: false,
+              validateEmail: true,
               title: 'forgotPassword.email'.tr(),
               hintText: 'forgotPassword.enterEmail'.tr(),
               showVisibilityIcon: true,
+              icon: const Icon(Icons.email),
+              fieldType: FieldType.email,
             ),
             const SizedBox(height: 45),
             PrimaryButton(

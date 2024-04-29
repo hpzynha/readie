@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/style.dart';
+
+enum FieldType {
+  email,
+  password,
+}
 
 class CustomAuthTextFormField extends StatefulWidget {
   final String? hintText;
@@ -9,6 +15,9 @@ class CustomAuthTextFormField extends StatefulWidget {
   final String? Function(String?)? validator;
   final bool obscureText;
   final bool showVisibilityIcon;
+  final Widget icon;
+  final bool validateEmail;
+  final FieldType fieldType;
 
   const CustomAuthTextFormField(
       {super.key,
@@ -17,7 +26,10 @@ class CustomAuthTextFormField extends StatefulWidget {
       required this.controller,
       this.validator,
       required this.obscureText,
-      required this.showVisibilityIcon});
+      required this.showVisibilityIcon,
+      required this.icon,
+      required this.validateEmail,
+      required this.fieldType});
 
   @override
   State<CustomAuthTextFormField> createState() =>
@@ -26,6 +38,7 @@ class CustomAuthTextFormField extends StatefulWidget {
 
 class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
   late bool _obscureText;
+  bool _showError = false;
 
   @override
   void initState() {
@@ -33,8 +46,37 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
     _obscureText = widget.obscureText;
   }
 
+  void _onTextChanged(String text) {
+    setState(() {
+      if (widget.fieldType == FieldType.email) {
+        // Check if email is valid
+        _showError = !widget.validateEmail || !isValidEmail(text);
+      } else if (widget.fieldType == FieldType.password) {
+        // Show error if the text length is less than 6 characters for password
+        _showError = text.length < 6;
+      }
+    });
+  }
+
+  bool isValidEmail(String email) {
+    final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    return emailRegex.hasMatch(email);
+  }
+
   @override
   Widget build(BuildContext context) {
+    String errorText = '';
+    // Determine the error message based on the field type
+    if (_showError) {
+      switch (widget.fieldType) {
+        case FieldType.email:
+          errorText = 'Email is required';
+          break;
+        case FieldType.password:
+          errorText = 'Password is required';
+          break;
+      }
+    }
     return Column(
       children: [
         Row(
@@ -59,9 +101,16 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
             validator: widget.validator,
             obscureText: _obscureText,
             autofocus: true,
+            keyboardType:
+                widget.validateEmail ? TextInputType.emailAddress : null,
+            inputFormatters: widget.validateEmail
+                ? [FilteringTextInputFormatter.allow(RegExp(r'[a-zA-Z0-9@._]'))]
+                : null,
+            onChanged: _onTextChanged,
             decoration: InputDecoration(
               labelText: "",
               hintText: widget.hintText,
+              prefixIcon: widget.icon,
               suffixIcon: widget.showVisibilityIcon
                   ? IconButton(
                       onPressed: () {
@@ -75,6 +124,7 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
                   : null,
               floatingLabelBehavior: FloatingLabelBehavior.always,
               contentPadding: const EdgeInsets.only(left: 8, bottom: 16),
+              errorText: _showError ? errorText : null,
               hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -83,9 +133,20 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
                   width: 2,
                 ),
               ),
+              fillColor: rSecondaryColor,
+              filled: true,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: rSecondaryColor),
+              ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide(color: rPrimaryColor, width: 2),
+                borderSide: BorderSide(color: rPrimaryColor, width: 1.5),
+              ),
+              errorBorder: OutlineInputBorder(
+                // Set the error border here
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: Colors.red),
               ),
             ),
           ),
