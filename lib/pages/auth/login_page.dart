@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPress: () {},
                       widget: const Icon(
                         Icons.facebook,
-                        size: 40,
+                        size: 45,
                         color: Colors.blue,
                       ),
                     ),

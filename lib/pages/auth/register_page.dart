@@ -167,7 +167,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onPress: () {},
                       widget: const Icon(
                         Icons.facebook,
-                        size: 32,
+                        size: 45,
                         color: Colors.blue,
                       ),
                     ),
