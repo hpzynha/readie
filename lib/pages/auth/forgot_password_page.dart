@@ -43,6 +43,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               obscureText: false,
               title: 'forgotPassword.email'.tr(),
               hintText: 'forgotPassword.enterEmail'.tr(),
+              showVisibilityIcon: true,
             ),
             const SizedBox(height: 45),
             PrimaryButton(

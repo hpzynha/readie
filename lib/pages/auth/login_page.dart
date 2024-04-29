@@ -90,12 +90,14 @@ class _LoginPageState extends State<LoginPage> {
                 CustomAuthTextFormField(
                     controller: _controllerEmail,
                     obscureText: false,
+                    showVisibilityIcon: false,
                     title: 'login.email'.tr(),
                     hintText: 'login.enterEmail'.tr()),
                 const SizedBox(height: 12),
                 CustomAuthTextFormField(
                   controller: _controllerPassword,
                   obscureText: true,
+                  showVisibilityIcon: true,
                   validator: (val) =>
                       val!.length < 6 ? 'Password too short' : null,
                   title: 'login.password'.tr(),

@@ -101,12 +101,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 CustomAuthTextFormField(
                     controller: _controllerEmail,
                     obscureText: false,
+                    showVisibilityIcon: false,
                     title: 'register.email'.tr(),
                     hintText: 'register.enterEmail'.tr()),
                 const SizedBox(height: 12),
                 CustomAuthTextFormField(
                   controller: _controllerPassword,
                   obscureText: true,
+                  showVisibilityIcon: true,
                   title: 'register.password'.tr(),
                   hintText: 'register.enterPassword'.tr(),
                 ),
@@ -114,6 +116,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 CustomAuthTextFormField(
                   controller: _controllerConfirmPassword,
                   obscureText: true,
+                  showVisibilityIcon: true,
                   title: 'register.comfirmPassword'.tr(),
                   hintText: 'register.enterComfirmPassword'.tr(),
                 ),
