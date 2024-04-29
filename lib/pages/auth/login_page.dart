@@ -158,7 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                       onPress: () {},
                       widget: const Icon(
                         Icons.facebook,
-                        size: 32,
+                        size: 40,
                         color: Colors.blue,
                       ),
                     ),
@@ -166,8 +166,9 @@ class _LoginPageState extends State<LoginPage> {
                     logoButton(
                       onPress: () {},
                       widget: Image.network(
-                          'http://pngimg.com/uploads/google/google_PNG19635.png',
-                          fit: BoxFit.cover),
+                        'http://pngimg.com/uploads/google/google_PNG19635.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ],
                 ),

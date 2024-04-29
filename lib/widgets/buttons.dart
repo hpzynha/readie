@@ -61,10 +61,21 @@ Widget logoButton({
 }) {
   return SizedBox(
     height: 50,
-    width: 80,
     child: OutlinedButton(
-      style: OutlinedButton.styleFrom(
-          side: const BorderSide(width: 1.0, color: Colors.grey)),
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(2),
+        side: MaterialStateProperty.all<BorderSide?>(
+            BorderSide(width: 1.0, color: rSecondaryColor)),
+        overlayColor: MaterialStateProperty.resolveWith<Color>(
+          (states) {
+            return rPrimaryColor
+                .withOpacity(0.1); // Set overlay color to transparent
+          },
+        ),
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.all(0.5),
+        ),
+      ),
       onPressed: () {},
       child: widget,
     ),
