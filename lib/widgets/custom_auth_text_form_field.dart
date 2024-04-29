@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,10 +71,10 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
     if (_showError) {
       switch (widget.fieldType) {
         case FieldType.email:
-          errorText = 'Email is required';
+          errorText = "errorMessage.emailRequired".tr();
           break;
         case FieldType.password:
-          errorText = 'Password is required';
+          errorText = "errorMessage.passwordRequireds".tr();
           break;
       }
     }

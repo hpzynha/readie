@@ -137,6 +137,49 @@ class _RegisterPageState extends State<RegisterPage> {
                   title: 'register.register'.tr(),
                   onPressed: registerUser,
                 ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        color: rSecondaryTextColor,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Text('register.orRegisterWith'.tr(),
+                          style: TextStyle(color: rSecondaryTextColor)),
+                    ),
+                    Expanded(
+                        child: Divider(
+                      color: rSecondaryTextColor,
+                      height: 24,
+                    ))
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    logoButton(
+                      onPress: () {},
+                      widget: const Icon(
+                        Icons.facebook,
+                        size: 32,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    logoButton(
+                      onPress: () {},
+                      widget: Image.network(
+                          'http://pngimg.com/uploads/google/google_PNG19635.png',
+                          fit: BoxFit.cover),
+                    ),
+                  ],
+                ),
               ],
             ),
           )

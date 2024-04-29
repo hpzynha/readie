@@ -27,7 +27,8 @@
         "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
-        "fieldCannotBeEmpty": "Field cannot be empty"
+        "fieldCannotBeEmpty": "Field cannot be empty",
+        "orRegisterWith": "Or register with"
     },
     "errorMessageDialog":{
         "titleDialog": "Login Failed",
@@ -44,7 +45,11 @@
         "email": "Email",
         "enterEmail": "Enter your email",
         "sendCode": "Send Code"
+    },
+    "errorMessage":{
+        "emailRequired": "Email is required",
+        "passwordRequired": "Password is required"
+       
     }
-
     
 }
