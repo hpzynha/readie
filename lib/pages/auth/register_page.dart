@@ -5,7 +5,7 @@ import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/style.dart';
 import 'package:readie/widgets/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
-import 'package:readie/widgets/text_form_field.dart';
+import 'package:readie/widgets/custom_auth_text_form_field.dart';
 import 'package:readie/widgets/text_widgets.dart';
 
 class RegisterPage extends StatefulWidget {

@@ -6,7 +6,7 @@ import 'package:readie/pages/auth/forgot_password_page.dart';
 import 'package:readie/style.dart';
 import 'package:readie/widgets/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
-import 'package:readie/widgets/text_form_field.dart';
+import 'package:readie/widgets/custom_auth_text_form_field.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:readie/widgets/text_widgets.dart';
