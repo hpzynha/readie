@@ -41,7 +41,12 @@ class _NavigationPageState extends State<NavigationPage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: signUserOut, icon: const Icon(Icons.logout))
+          IconButton(
+              onPressed: signUserOut,
+              icon: Icon(
+                Icons.logout,
+                color: rPrimaryColor,
+              ))
         ],
       ),
       body: _pages[_selectedIndex],
