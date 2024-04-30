@@ -49,7 +49,6 @@
     "errorMessage":{
         "emailRequired": "Email is required",
         "passwordRequired": "Password is required"
-       
     }
     
 }

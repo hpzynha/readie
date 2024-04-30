@@ -74,7 +74,7 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
           errorText = "errorMessage.emailRequired".tr();
           break;
         case FieldType.password:
-          errorText = "errorMessage.passwordRequireds".tr();
+          errorText = "errorMessage.passwordRequired".tr();
           break;
       }
     }
