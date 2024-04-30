@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class DiscoverPage extends StatelessWidget {
+  const DiscoverPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Text('HOMEPAGE'),
+      body: Text('DiscoverPage'),
     );
   }
 }

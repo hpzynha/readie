@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:readie/pages/auth/login_page.dart';
-import 'package:readie/pages/home_page.dart';
+import 'package:readie/pages/navigation_page.dart';
 import 'package:readie/style.dart';
 
 class AuthPage extends StatelessWidget {
@@ -23,7 +23,7 @@ class AuthPage extends StatelessWidget {
           );
         } else {
           if (snapshot.hasData) {
-            return const HomePage();
+            return const NavigationPage();
           } else {
             return const LoginPage();
           }
