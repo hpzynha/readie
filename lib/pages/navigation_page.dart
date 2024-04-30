@@ -4,6 +4,7 @@ import 'package:readie/pages/discover_page.dart';
 import 'package:readie/pages/home_page.dart';
 import 'package:readie/pages/my_books.dart';
 import 'package:readie/pages/search_page.dart';
+import 'package:readie/style.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});
@@ -45,6 +46,8 @@ class _NavigationPageState extends State<NavigationPage> {
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomAppBar(
+        elevation: 8.0,
+        color: rSecondaryColor,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -54,6 +57,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.home,
+                color: rPrimaryColor,
                 size: width,
               ),
             ),
@@ -63,6 +67,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.book_outlined,
+                color: rPrimaryColor,
                 size: width,
               ),
             ),
@@ -72,6 +77,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.explore,
+                color: rPrimaryColor,
                 size: width,
               ),
             ),
@@ -81,6 +87,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.search,
+                color: rPrimaryColor,
                 size: width,
               ),
             ),
@@ -88,6 +95,7 @@ class _NavigationPageState extends State<NavigationPage> {
               onPressed: () {},
               icon: Icon(
                 Icons.menu,
+                color: rPrimaryColor,
                 size: width,
               ),
             ),
