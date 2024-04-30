@@ -35,6 +35,8 @@ class _NavigationPageState extends State<NavigationPage> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width * 0.08;
+
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -52,7 +54,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.home,
-                size: MediaQuery.of(context).size.width * 0.08,
+                size: width,
               ),
             ),
             IconButton(
@@ -61,7 +63,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.book_outlined,
-                size: MediaQuery.of(context).size.width * 0.08,
+                size: width,
               ),
             ),
             IconButton(
@@ -70,7 +72,7 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.explore,
-                size: MediaQuery.of(context).size.width * 0.08,
+                size: width,
               ),
             ),
             IconButton(
@@ -79,14 +81,14 @@ class _NavigationPageState extends State<NavigationPage> {
               },
               icon: Icon(
                 Icons.search,
-                size: MediaQuery.of(context).size.width * 0.08,
+                size: width,
               ),
             ),
             IconButton(
               onPressed: () {},
               icon: Icon(
                 Icons.menu,
-                size: MediaQuery.of(context).size.width * 0.08,
+                size: width,
               ),
             ),
           ],
