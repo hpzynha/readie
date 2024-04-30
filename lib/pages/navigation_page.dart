@@ -50,43 +50,43 @@ class _NavigationPageState extends State<NavigationPage> {
               onPressed: () {
                 _navigateToPage(0);
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.home,
-                size: 35,
+                size: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
             IconButton(
               onPressed: () {
                 _navigateToPage(1);
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.book_outlined,
-                size: 35,
+                size: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
             IconButton(
               onPressed: () {
                 _navigateToPage(2);
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.explore,
-                size: 35,
+                size: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
             IconButton(
               onPressed: () {
                 _navigateToPage(3);
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.search,
-                size: 35,
+                size: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
             IconButton(
               onPressed: () {},
-              icon: const Icon(
+              icon: Icon(
                 Icons.menu,
-                size: 35,
+                size: MediaQuery.of(context).size.width * 0.08,
               ),
             ),
           ],
