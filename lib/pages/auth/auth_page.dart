@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:readie/pages/auth/login_page.dart';
 import 'package:readie/pages/home_page.dart';
+import 'package:readie/style.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -12,13 +13,20 @@ class AuthPage extends StatelessWidget {
         body: StreamBuilder<User?>(
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
-        //user is logged in
-        if (snapshot.hasData) {
-          return const HomePage();
-        }
-        //user is not logged in
-        else {
-          return const LoginPage();
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(
+                color: rPrimaryColor,
+              ),
+            ),
+          );
+        } else {
+          if (snapshot.hasData) {
+            return const HomePage();
+          } else {
+            return const LoginPage();
+          }
         }
       },
     ));
