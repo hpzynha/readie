@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
-import 'package:readie/service/auth_service.dart';
 
 import 'package:readie/style.dart';
 import 'package:readie/widgets/alert_dialog.dart';
@@ -139,51 +138,25 @@ class _RegisterPageState extends State<RegisterPage> {
                   title: 'register.register'.tr(),
                   onPressed: registerUser,
                 ),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        color: rSecondaryTextColor,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text('register.orRegisterWith'.tr(),
-                          style: TextStyle(color: rSecondaryTextColor)),
-                    ),
-                    Expanded(
-                        child: Divider(
-                      color: rSecondaryTextColor,
-                      height: 24,
-                    ))
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    logoButton(
-                      onPress: () {},
-                      widget: const Icon(
-                        Icons.facebook,
-                        size: 45,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    logoButton(
-                      onPress: () => AuthService().signInWithGoogle(),
-                      widget: Image.network(
-                          'http://pngimg.com/uploads/google/google_PNG19635.png',
-                          fit: BoxFit.cover),
-                    ),
-                  ],
-                ),
+                const SizedBox(height: 40),
               ],
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Already a member?',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  )),
+              textButton(
+                  text: 'login.login'.tr(),
+                  onPress: () {
+                    Navigator.pushNamed(context, '/login');
+                  },
+                  color: rPrimaryColor)
+            ],
           )
         ],
       ),

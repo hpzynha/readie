@@ -157,6 +157,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: connectWithButton(
                         onPress: () => AuthService().signInWithGoogle(),
                         title: 'Continue with Google')),
+                const SizedBox(
+                  height: 25,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
