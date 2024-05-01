@@ -81,3 +81,57 @@ Widget logoButton({
     ),
   );
 }
+
+Widget connectWithButton({
+  required Function() onPress,
+  required String title,
+}) {
+  return Container(
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(20),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.2),
+          spreadRadius: 1,
+          blurRadius: 3,
+          offset: const Offset(0, 1),
+        ),
+      ],
+    ),
+    child: OutlinedButton(
+      onPressed: onPress,
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(2),
+        side: MaterialStateProperty.all<BorderSide?>(BorderSide.none),
+        overlayColor: MaterialStateProperty.resolveWith<Color>(
+          (states) {
+            return rPrimaryColor
+                .withOpacity(0.1); // Set overlay color to transparent
+          },
+        ),
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.all(0.5),
+        ),
+      ),
+      child: Row(
+        children: [
+          const SizedBox(width: 10),
+          Image.network(
+            'http://pngimg.com/uploads/google/google_PNG19635.png',
+            height: 30,
+            width: 30,
+          ),
+          const SizedBox(width: 10),
+          Text(
+            title,
+            style: const TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.normal),
+          ),
+        ],
+      ),
+    ),
+  );
+}

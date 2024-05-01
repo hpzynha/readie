@@ -152,27 +152,11 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    logoButton(
-                      onPress: () {},
-                      widget: const Icon(
-                        Icons.facebook,
-                        size: 45,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    const SizedBox(width: 20),
-                    logoButton(
-                      onPress: () => AuthService().signInWithGoogle(),
-                      widget: Image.network(
-                        'http://pngimg.com/uploads/google/google_PNG19635.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                ),
+                SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    child: connectWithButton(
+                        onPress: () => AuthService().signInWithGoogle(),
+                        title: 'Continue with Google')),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
