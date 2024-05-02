@@ -72,114 +72,117 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 100),
-            child:
-                Image(image: SvgImage.asset('assets/images/PrimaryLogo.svg')),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 40, right: 60),
-            child: Column(
-              children: [
-                textTitle(
-                  title: 'login.login'.tr(),
-                  text: 'login.loginToUseTheApp'.tr(),
-                ),
-                const SizedBox(height: 29),
-                CustomAuthTextFormField(
-                  controller: _controllerEmail,
-                  obscureText: false,
-                  showVisibilityIcon: false,
-                  validateEmail: true,
-                  icon: const Icon(Icons.email),
-                  title: 'login.email'.tr(),
-                  hintText: 'login.enterEmail'.tr(),
-                  fieldType: FieldType.email,
-                ),
-                const SizedBox(height: 12),
-                CustomAuthTextFormField(
-                  controller: _controllerPassword,
-                  obscureText: true,
-                  showVisibilityIcon: true,
-                  validateEmail: false,
-                  icon: const Icon(
-                    Icons.lock,
-                  ),
-                  validator: (val) =>
-                      val!.length < 6 ? 'Password too short' : null,
-                  title: 'login.password'.tr(),
-                  hintText: 'login.enterPassword'.tr(),
-                  fieldType: FieldType.password,
-                ),
-                const SizedBox(height: 5),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    textButton(
-                      text: 'login.forgotPassword'.tr(),
-                      onPress: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (ctx) => const ForgotPasswordPage()));
-                      },
-                      color: rPrimaryColor,
-                    )
-                  ],
-                ),
-                const SizedBox(height: 20),
-                PrimaryButton(title: 'login.login'.tr(), onPressed: loginUser),
-                const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Divider(
-                        color: rSecondaryTextColor,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text('login.orLoginWith'.tr(),
-                          style: TextStyle(color: rSecondaryTextColor)),
-                    ),
-                    Expanded(
-                        child: Divider(
-                      color: rSecondaryTextColor,
-                      height: 24,
-                    ))
-                  ],
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: connectWithButton(
-                        onPress: () => AuthService().signInWithGoogle(),
-                        title: 'Continue with Google')),
-                const SizedBox(
-                  height: 25,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('Dont have an account?',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.black,
-                        )),
-                    textButton(
-                        text: 'login.register'.tr(),
-                        onPress: () {
-                          Navigator.pushNamed(context, '/register');
-                        },
-                        color: rPrimaryColor)
-                  ],
-                )
-              ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 100),
+              child:
+                  Image(image: SvgImage.asset('assets/images/PrimaryLogo.svg')),
             ),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 40, right: 60),
+              child: Column(
+                children: [
+                  textTitle(
+                    title: 'login.login'.tr(),
+                    text: 'login.loginToUseTheApp'.tr(),
+                  ),
+                  const SizedBox(height: 29),
+                  CustomAuthTextFormField(
+                    controller: _controllerEmail,
+                    obscureText: false,
+                    showVisibilityIcon: false,
+                    validateEmail: true,
+                    icon: const Icon(Icons.email),
+                    title: 'login.email'.tr(),
+                    hintText: 'login.enterEmail'.tr(),
+                    fieldType: FieldType.email,
+                  ),
+                  const SizedBox(height: 12),
+                  CustomAuthTextFormField(
+                    controller: _controllerPassword,
+                    obscureText: true,
+                    showVisibilityIcon: true,
+                    validateEmail: false,
+                    icon: const Icon(
+                      Icons.lock,
+                    ),
+                    validator: (val) =>
+                        val!.length < 6 ? 'Password too short' : null,
+                    title: 'login.password'.tr(),
+                    hintText: 'login.enterPassword'.tr(),
+                    fieldType: FieldType.password,
+                  ),
+                  const SizedBox(height: 5),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      textButton(
+                        text: 'login.forgotPassword'.tr(),
+                        onPress: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (ctx) => const ForgotPasswordPage()));
+                        },
+                        color: rPrimaryColor,
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  PrimaryButton(
+                      title: 'login.login'.tr(), onPressed: loginUser),
+                  const SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          color: rSecondaryTextColor,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Text('login.orLoginWith'.tr(),
+                            style: TextStyle(color: rSecondaryTextColor)),
+                      ),
+                      Expanded(
+                          child: Divider(
+                        color: rSecondaryTextColor,
+                        height: 24,
+                      ))
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: connectWithButton(
+                          onPress: () => AuthService().signInWithGoogle(),
+                          title: 'Continue with Google')),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text('Dont have an account?',
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                          )),
+                      textButton(
+                          text: 'login.register'.tr(),
+                          onPress: () {
+                            Navigator.pushNamed(context, '/register');
+                          },
+                          color: rPrimaryColor)
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

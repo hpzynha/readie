@@ -119,9 +119,10 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
                           _obscureText = !_obscureText;
                         });
                       },
-                      icon: Icon(_obscureText
-                          ? Icons.visibility_off
-                          : Icons.visibility))
+                      icon: Icon(
+                        _obscureText ? Icons.visibility_off : Icons.visibility,
+                        color: Colors.black,
+                      ))
                   : null,
               floatingLabelBehavior: FloatingLabelBehavior.always,
               contentPadding: const EdgeInsets.only(left: 8, bottom: 16),
