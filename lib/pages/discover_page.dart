@@ -27,7 +27,7 @@ class DiscoverPage extends StatelessWidget {
           )
         ],
       ),
-      body: Text('DiscoverPage'),
+      body: const Text('DiscoverPage'),
     );
   }
 }
