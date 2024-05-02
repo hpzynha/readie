@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:readie/pages/discover_page.dart';
 import 'package:readie/pages/home_page.dart';
 import 'package:readie/pages/my_books.dart';
-import 'package:readie/pages/search_page.dart';
+
+import 'package:readie/pages/user_page.dart';
 import 'package:readie/style.dart';
 
 class NavigationPage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _NavigationPageState extends State<NavigationPage> {
     const HomePage(),
     const MyBooksPage(),
     const DiscoverPage(),
-    const SearchPage()
+    const UserPage()
   ];
 
   void _navigateToPage(int index) {
@@ -37,18 +38,7 @@ class _NavigationPageState extends State<NavigationPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width * 0.08;
-
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: signUserOut,
-              icon: Icon(
-                Icons.logout,
-                color: rPrimaryColor,
-              ))
-        ],
-      ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomAppBar(
         elevation: 8.0,
@@ -61,7 +51,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 _navigateToPage(0);
               },
               icon: Icon(
-                Icons.home,
+                _selectedIndex == 0 ? Icons.home : Icons.home_outlined,
                 color: rPrimaryColor,
                 size: width,
               ),
@@ -71,7 +61,9 @@ class _NavigationPageState extends State<NavigationPage> {
                 _navigateToPage(1);
               },
               icon: Icon(
-                Icons.book_outlined,
+                _selectedIndex == 1
+                    ? Icons.local_library
+                    : Icons.local_library_outlined,
                 color: rPrimaryColor,
                 size: width,
               ),
@@ -81,7 +73,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 _navigateToPage(2);
               },
               icon: Icon(
-                Icons.explore,
+                _selectedIndex == 2 ? Icons.grid_view_sharp : Icons.grid_view,
                 color: rPrimaryColor,
                 size: width,
               ),
@@ -91,15 +83,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 _navigateToPage(3);
               },
               icon: Icon(
-                Icons.search,
-                color: rPrimaryColor,
-                size: width,
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.menu,
+                _selectedIndex == 3 ? Icons.person : Icons.person_outline,
                 color: rPrimaryColor,
                 size: width,
               ),

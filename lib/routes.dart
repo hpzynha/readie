@@ -6,8 +6,8 @@ import 'package:readie/pages/discover_page.dart';
 import 'package:readie/pages/home_page.dart';
 import 'package:readie/pages/my_books.dart';
 import 'package:readie/pages/navigation_page.dart';
-import 'package:readie/pages/search_page.dart';
 import 'package:readie/pages/splash_page.dart';
+import 'package:readie/pages/user_page.dart';
 
 class Routes {
   static Map<String, Widget Function(BuildContext)> list =
@@ -20,7 +20,7 @@ class Routes {
     '/home': (context) => const HomePage(),
     '/mybooks': (context) => const MyBooksPage(),
     '/discover': (context) => const DiscoverPage(),
-    '/search': (context) => const SearchPage()
+    '/userpage': (context) => const UserPage()
   };
   static String initial = '/';
 
