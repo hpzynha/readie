@@ -33,3 +33,11 @@ Widget textTitle({required String title, required String text}) {
     ),
   ]);
 }
+
+Widget textLogo() {
+  return Text(
+    'Readie',
+    style: GoogleFonts.alike(
+        fontSize: 34, fontWeight: FontWeight.bold, color: Colors.grey),
+  );
+}

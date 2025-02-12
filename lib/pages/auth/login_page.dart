@@ -77,8 +77,11 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 100),
-              child:
-                  Image(image: SvgImage.asset('assets/images/PrimaryLogo.svg')),
+              child: textLogo(),
+
+              // Image(
+              //   image: SvgImage.asset('assets/images/PrimaryLogo.svg'),
+              // ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 40, right: 60),
