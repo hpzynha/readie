@@ -1,6 +1,8 @@
 {
     "login": {
+        "welcome": "Bem vindo ao Readie",
         "forgotMyPassword": "Esqueci minha senha",
+        "subTextWelcome": "Entre agora e mergulhe numa comunidade feita para quem ama livros!",
         "email": "Email",
         "password": "Password",
         "login": "Login",

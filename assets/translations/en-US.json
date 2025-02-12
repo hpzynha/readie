@@ -1,10 +1,7 @@
-{
-    "splash": {
-        "logo": "readie",
-        "subLogo": "Leia, resenhe, inspire-se."
-    },
-    
+{   
     "login": {
+        "welcome": "Welcome to Readie",
+        "subTextWelcome": "Log in to explore and connect with fellow book lovers",
         "forgotPassword": "Forgot password?",
         "email": "Email",
         "password": "Password",
@@ -34,6 +31,10 @@
         "passwordNotMacth": "As senhas devem ser iguais",
         "fieldCannotBeEmpty": "Field cannot be empty",
         "orRegisterWith": "Or register with"
+    },
+    "splash": {
+        "logo": "readie",
+        "subLogo": "Leia, resenhe, inspire-se."
     },
     "errorMessageDialog":{
         "titleDialog": "Login Failed",
