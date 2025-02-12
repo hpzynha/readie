@@ -8,7 +8,10 @@
         "enterEmail": "",
         "enterPassword": "",
         "fieldCannotBeEmpty": "Campo obrigatório",
-        "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account." 
+        "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account.",
+        "logo": "readie",
+        "subLogo": "Leia, resenhe, inspire-se."
+        
     },
     "createAccount": {
         "createAccount": "Criar uma conta",
@@ -28,6 +31,11 @@
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
         "fieldCannotBeEmpty": "Campo obrigatório"
+    },
+
+    "splash": {
+        "logo": "readie",
+        "subLogo": "Leia, resenhe, inspire-se."
     }
 
     

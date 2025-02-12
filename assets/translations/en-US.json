@@ -1,4 +1,9 @@
 {
+    "splash": {
+        "logo": "readie",
+        "subLogo": "Leia, resenhe, inspire-se."
+    },
+    
     "login": {
         "forgotPassword": "Forgot password?",
         "email": "Email",

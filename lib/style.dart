@@ -4,7 +4,7 @@ Color rBackgroundColor = const Color(0xFFF6F9FF);
 
 Color rPrimaryColor = const Color(0xFF78AEB9);
 
-Color rSecondaryColor = const Color(0xFF3C5B);
+Color rSecondaryColor = const Color(0xFF3C5B64);
 
 Color rBackgroundBookColor = const Color(0xFFFEFAE0);
 
