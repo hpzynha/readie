@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
 import 'package:readie/service/auth_service.dart';
 

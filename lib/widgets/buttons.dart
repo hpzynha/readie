@@ -41,10 +41,10 @@ Widget textButton({
   return TextButton(
     onPressed: onPress,
     style: ButtonStyle(
-      overlayColor: MaterialStateProperty.resolveWith<Color>(
+      overlayColor: WidgetStateProperty.resolveWith<Color>(
         (states) {
-          return rPrimaryColor
-              .withOpacity(0.1); // Set overlay color to transparent
+          return rPrimaryColor.withValues(
+              alpha: 0.1); // Set overlay color to transparent
         },
       ),
     ),
@@ -63,16 +63,16 @@ Widget logoButton({
     height: 50,
     child: OutlinedButton(
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all(2),
-        side: MaterialStateProperty.all<BorderSide?>(
+        elevation: WidgetStateProperty.all(2),
+        side: WidgetStateProperty.all<BorderSide?>(
             BorderSide(width: 1.0, color: rSecondaryColor)),
-        overlayColor: MaterialStateProperty.resolveWith<Color>(
+        overlayColor: WidgetStateProperty.resolveWith<Color>(
           (states) {
-            return rPrimaryColor
-                .withOpacity(0.1); // Set overlay color to transparent
+            return rPrimaryColor.withValues(
+                alpha: 0.1); // Set overlay color to transparent
           },
         ),
-        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
           const EdgeInsets.all(0.5),
         ),
       ),
@@ -92,7 +92,7 @@ Widget connectWithButton({
       borderRadius: BorderRadius.circular(20),
       boxShadow: [
         BoxShadow(
-          color: Colors.black.withOpacity(0.2),
+          color: Colors.black.withValues(alpha: 0.2),
           spreadRadius: 1,
           blurRadius: 3,
           offset: const Offset(0, 1),
@@ -102,15 +102,15 @@ Widget connectWithButton({
     child: OutlinedButton(
       onPressed: onPress,
       style: ButtonStyle(
-        elevation: MaterialStateProperty.all(2),
-        side: MaterialStateProperty.all<BorderSide?>(BorderSide.none),
-        overlayColor: MaterialStateProperty.resolveWith<Color>(
+        elevation: WidgetStateProperty.all(2),
+        side: WidgetStateProperty.all<BorderSide?>(BorderSide.none),
+        overlayColor: WidgetStateProperty.resolveWith<Color>(
           (states) {
-            return rPrimaryColor
-                .withOpacity(0.1); // Set overlay color to transparent
+            return rPrimaryColor.withValues(
+                alpha: 0.1); // Set overlay color to transparent
           },
         ),
-        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
           const EdgeInsets.all(0.5),
         ),
       ),
