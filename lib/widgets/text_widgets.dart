@@ -10,23 +10,30 @@ Widget textTitle({required String title, required String text}) {
       Image(
         image: SvgImage.asset('assets/images/peep-59.svg'),
       ),
-      Column(
-        children: [
-          Text(
-            'login.welcome'.tr(),
-            style: GoogleFonts.lato(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: rSecondaryColor,
+      Flexible(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'login.welcome'.tr(),
+              style: GoogleFonts.lato(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: rSecondaryColor,
+              ),
             ),
-          ),
-          Text(
-            'login.subTextWelcome'.tr(),
-            softWrap: true,
-            maxLines: 3,
-            overflow: TextOverflow.ellipsis,
-          ),
-        ],
+            const SizedBox(height: 6),
+            Text(
+              'login.subTextWelcome'.tr(),
+              style: GoogleFonts.lato(
+                fontSize: 14,
+                fontWeight: FontWeight.normal,
+                color: rTertiart,
+              ),
+            ),
+          ],
+        ),
       ),
     ],
   );
