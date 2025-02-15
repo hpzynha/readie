@@ -93,9 +93,11 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: false,
                     showVisibilityIcon: false,
                     validateEmail: true,
-                    icon: const Icon(Icons.email),
-                    title: 'login.email'.tr(),
-                    hintText: 'login.enterEmail'.tr(),
+                    icon: Icon(
+                      Icons.email,
+                      color: rSecondaryColor,
+                    ),
+                    hintText: 'login.email'.tr(),
                     fieldType: FieldType.email,
                   ),
                   const SizedBox(height: 12),
@@ -104,13 +106,13 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                     showVisibilityIcon: true,
                     validateEmail: false,
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.lock,
+                      color: rSecondaryColor,
                     ),
                     validator: (val) =>
                         val!.length < 6 ? 'Password too short' : null,
-                    title: 'login.password'.tr(),
-                    hintText: 'login.enterPassword'.tr(),
+                    hintText: 'login.password'.tr(),
                     fieldType: FieldType.password,
                   ),
                   const SizedBox(height: 5),
@@ -123,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (ctx) => const ForgotPasswordPage()));
                         },
-                        color: rPrimaryColor,
+                        color: rSecondaryColor,
                       )
                     ],
                   ),
@@ -174,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                           onPress: () {
                             Navigator.pushNamed(context, '/register');
                           },
-                          color: rPrimaryColor)
+                          color: rSecondaryColor)
                     ],
                   )
                 ],

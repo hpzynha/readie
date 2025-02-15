@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg_image/flutter_svg_image.dart';
 
 import 'package:readie/style.dart';
 import 'package:readie/widgets/alert_dialog.dart';
@@ -77,19 +76,12 @@ class _RegisterPageState extends State<RegisterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(
-            Icons.arrow_back_ios_new,
-            color: rPrimaryColor,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
-          Image(image: SvgImage.asset('assets/images/PrimaryLogo.svg')),
+          textLogo(),
+          const SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.only(left: 40, right: 60),
             child: Column(
@@ -104,8 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: false,
                   showVisibilityIcon: false,
                   icon: const Icon(Icons.email),
-                  title: 'register.email'.tr(),
-                  hintText: 'register.enterEmail'.tr(),
+                  hintText: 'register.email'.tr(),
                   validateEmail: true,
                   fieldType: FieldType.email,
                 ),
@@ -117,8 +108,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   icon: const Icon(
                     Icons.lock,
                   ),
-                  title: 'register.password'.tr(),
-                  hintText: 'register.enterPassword'.tr(),
+                  hintText: 'register.password'.tr(),
                   validateEmail: false,
                   fieldType: FieldType.password,
                 ),
@@ -128,8 +118,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   obscureText: true,
                   showVisibilityIcon: true,
                   icon: const Icon(Icons.lock),
-                  title: 'register.comfirmPassword'.tr(),
-                  hintText: 'register.enterComfirmPassword'.tr(),
+                  hintText: 'register.comfirmPassword'.tr(),
                   validateEmail: false,
                   fieldType: FieldType.password,
                 ),

@@ -14,7 +14,7 @@ class PrimaryButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       child: Container(
         decoration: BoxDecoration(
-          color: rPrimaryColor,
+          color: rSecondaryColor,
           borderRadius: BorderRadius.circular(20),
         ),
         child: OutlinedButton(

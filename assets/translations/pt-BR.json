@@ -7,8 +7,8 @@
         "password": "Senha",
         "login": "Entrar agora",
         "loginToUseTheApp": "Entre para usar o app",
-        "enterEmail": "",
-        "enterPassword": "",
+        "enterEmail": "Email",
+        "enterPassword": "Senha",
         "fieldCannotBeEmpty": "Campo obrigatório",
         "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account.",
         "orLoginWith": "Ou",
@@ -19,17 +19,17 @@
         "register": "Cadastre-se agora"
         
     },
-    "createAccount": {
+    "register": {
         "createAccount": "Criar uma conta",
         "register": "Cadastro",
         "typeYourData": "Digite seus Dados",
         "name": "Nome",
         "lastName": "Sobrenome",
         "email": "E-mail",
-        "phoneNumber": "Melhor número para contato",
+        "password": "Senha",
+        "comfirmPassword": "Comfirme sua senha",
         "choosePassword": "Escolha uma senha",
         "minimumCharacters": "Mínimo de 8 caracteres",
-        "password": "Senha",
         "repeatPassword": "Repita a senha",
         "number": "(00) 00000-0000",
         "create": "Criar conta",

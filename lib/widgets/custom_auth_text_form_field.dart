@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/style.dart';
 
 enum FieldType {
@@ -11,7 +10,6 @@ enum FieldType {
 
 class CustomAuthTextFormField extends StatefulWidget {
   final String? hintText;
-  final String title;
   final TextEditingController controller;
   final String? Function(String?)? validator;
   final bool obscureText;
@@ -23,7 +21,6 @@ class CustomAuthTextFormField extends StatefulWidget {
   const CustomAuthTextFormField(
       {super.key,
       this.hintText,
-      required this.title,
       required this.controller,
       this.validator,
       required this.obscureText,
@@ -80,18 +77,6 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
     }
     return Column(
       children: [
-        Row(
-          children: [
-            Text(
-              widget.title,
-              style: GoogleFonts.lato(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
-                color: rTitleBlackColor,
-              ),
-            ),
-          ],
-        ),
         const SizedBox(height: 12),
         Container(
           decoration: BoxDecoration(
@@ -121,7 +106,7 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
                       },
                       icon: Icon(
                         _obscureText ? Icons.visibility_off : Icons.visibility,
-                        color: Colors.black,
+                        color: rSecondaryColor,
                       ))
                   : null,
               floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -135,7 +120,7 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
                   width: 2,
                 ),
               ),
-              fillColor: rSecondaryColor,
+              fillColor: Colors.transparent,
               filled: true,
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
