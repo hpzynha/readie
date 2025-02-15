@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/style.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -82,7 +83,7 @@ Widget logoButton({
   );
 }
 
-Widget connectWithButton({
+Widget googleButton({
   required Function() onPress,
   required String title,
 }) {
@@ -115,6 +116,7 @@ Widget connectWithButton({
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(width: 10),
           Image.network(
@@ -125,10 +127,11 @@ Widget connectWithButton({
           const SizedBox(width: 10),
           Text(
             title,
-            style: const TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontWeight: FontWeight.normal),
+            style: GoogleFonts.lato(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: rTertiart,
+            ),
           ),
         ],
       ),

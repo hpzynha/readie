@@ -157,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   SizedBox(
                       width: MediaQuery.of(context).size.width,
-                      child: connectWithButton(
+                      child: googleButton(
                           onPress: () => AuthService().signInWithGoogle(),
                           title: 'login.googleButton'.tr())),
                   const SizedBox(

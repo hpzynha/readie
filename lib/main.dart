@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:readie/routes.dart';
+import 'package:readie/style.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,6 +51,7 @@ class ReadieApp extends StatelessWidget {
     return baseTheme.copyWith(
       textTheme: GoogleFonts.latoTextTheme(baseTheme.textTheme),
       visualDensity: VisualDensity.adaptivePlatformDensity,
+      scaffoldBackgroundColor: rBackgroundColor,
     );
   }
 }

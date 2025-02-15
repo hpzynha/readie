@@ -75,12 +75,12 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      ),
       body: Column(
         children: [
-          textLogo(),
+          Padding(
+            padding: const EdgeInsets.only(top: 100),
+            child: textLogo(),
+          ),
           const SizedBox(height: 25),
           Padding(
             padding: const EdgeInsets.only(left: 40, right: 60),
