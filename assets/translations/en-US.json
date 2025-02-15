@@ -31,7 +31,8 @@
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
         "fieldCannotBeEmpty": "Field cannot be empty",
-        "orRegisterWith": "Or register with"
+        "orRegisterWith": "Or register with",
+        "alreadyAmember": "Already a member?"
     },
     "splash": {
         "logo": "readie",

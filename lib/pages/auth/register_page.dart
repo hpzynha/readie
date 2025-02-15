@@ -134,8 +134,8 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Already a member?',
-                  style: TextStyle(
+              Text('register.alreadyAmember'.tr(),
+                  style: const TextStyle(
                     fontSize: 16,
                     color: Colors.black,
                   )),

@@ -36,7 +36,8 @@
         "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
-        "fieldCannotBeEmpty": "Campo obrigatório"
+        "fieldCannotBeEmpty": "Campo obrigatório",
+        "alreadyAmember": "Já tem uma conta?"
     },
 
     "splash": {
