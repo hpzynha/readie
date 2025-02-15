@@ -1,18 +1,22 @@
 {
     "login": {
         "welcome": "Bem vindo ao Readie",
-        "forgotMyPassword": "Esqueci minha senha",
+        "forgotPassword": "Esqueci minha senha",
         "subTextWelcome": "Entre agora e mergulhe numa comunidade feita para quem ama livros!",
         "email": "Email",
-        "password": "Password",
-        "login": "Login",
+        "password": "Senha",
+        "login": "Entrar agora",
         "loginToUseTheApp": "Entre para usar o app",
         "enterEmail": "",
         "enterPassword": "",
         "fieldCannotBeEmpty": "Campo obrigatório",
         "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account.",
+        "orLoginWith": "Ou",
+        "googleButton": "Google",
+        "dontHaveAnAccount": "Não tem uma conta?",
         "logo": "readie",
-        "subLogo": "Leia, resenhe, inspire-se."
+        "subLogo": "Leia, resenhe, inspire-se.",
+        "register": "Cadastre-se agora"
         
     },
     "createAccount": {

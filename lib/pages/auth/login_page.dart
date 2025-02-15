@@ -157,15 +157,15 @@ class _LoginPageState extends State<LoginPage> {
                       width: MediaQuery.of(context).size.width,
                       child: connectWithButton(
                           onPress: () => AuthService().signInWithGoogle(),
-                          title: 'Continue with Google')),
+                          title: 'login.googleButton'.tr())),
                   const SizedBox(
                     height: 25,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Dont have an account?',
-                          style: TextStyle(
+                      Text('login.dontHaveAnAccount'.tr(),
+                          style: const TextStyle(
                             fontSize: 16,
                             color: Colors.black,
                           )),

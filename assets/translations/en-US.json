@@ -11,6 +11,10 @@
         "enterPassword": "Enter your password",
         "fieldCannotBeEmpty": "Field cannot be empty",
         "orLoginWith": "Or login with",
+        "googleButton": "Google",
+        "dontHaveAnAccount": "Don't have an account?",
+         "logo": "readie",
+        "subLogo": "Leia, resenhe, inspire-se.",
         "register": "Register"
        
     },
