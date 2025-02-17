@@ -22,14 +22,15 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _controllerConfirmPassword =
       TextEditingController();
 
-  void registerUser() {
+  void registerUser() async {
     final email = _controllerEmail.text.trim();
     final password = _controllerPassword.text.trim();
     final auth = FirebaseAuth.instance;
 
-    //Show loading circle
+    // Exibe o indicador de carregamento
     showDialog(
       context: context,
+      barrierDismissible: false, // Impede que o usuário feche o diálogo
       builder: (context) {
         return const Center(
           child: CircularProgressIndicator(
@@ -38,39 +39,72 @@ class _RegisterPageState extends State<RegisterPage> {
         );
       },
     );
+
     try {
       if (_controllerPassword.text == _controllerConfirmPassword.text) {
-        auth.createUserWithEmailAndPassword(
+        // Tenta criar o usuário
+        await auth.createUserWithEmailAndPassword(
           email: email,
           password: password,
         );
+
+        // Fecha o indicador de carregamento
+        if (mounted) {
+          Navigator.pop(context);
+        }
+
+        // Navega para a tela inicial após o cadastro bem-sucedido
+        if (mounted) {
+          Navigator.pushReplacementNamed(context, '/home');
+        }
       } else {
-        throw FirebaseAuthException(
-          code: 'password-mismatch',
-          message: 'Passwords do not match',
-        );
+        // Fecha o indicador de carregamento
+        if (mounted) {
+          Navigator.pop(context);
+        }
+
+        // Exibe mensagem de erro para senhas não coincidentes
+        showErrorMessage('errorMessageDialog.errorMessagePassword'.tr());
       }
+    } on FirebaseAuthException catch (e) {
+      // Fecha o indicador de carregamento
       if (mounted) {
         Navigator.pop(context);
       }
-    } on FirebaseAuthException {
+
+      // Trata erros específicos do Firebase Auth
+      if (e.code == 'email-already-in-use') {
+        showErrorMessage('errorMessageDialog.emailAlreadyInUse'.tr());
+      } else if (e.code == 'weak-password') {
+        showErrorMessage('errorMessageDialog.weakPassword'.tr());
+      } else if (e.code == 'invalid-email') {
+        showErrorMessage('errorMessageDialog.invalidEmail'.tr());
+      } else {
+        showErrorMessage('errorMessageDialog.genericError'.tr());
+      }
+    } catch (e) {
+      // Fecha o indicador de carregamento
       if (mounted) {
         Navigator.pop(context);
       }
-      showErrorMessage();
+
+      // Trata outros erros inesperados
+      showErrorMessage('errorMessageDialog.genericError'.tr());
     }
   }
 
-  void showErrorMessage() {
+  void showErrorMessage(String message) {
     showDialog(
-        context: context,
-        builder: (context) {
-          return customShowAlertDialog(
-              title: 'errorMessageDialog.titleDialog'.tr(),
-              content: 'errorMessageDialog.errorMessagePassword'.tr(),
-              buttonText: 'errorMessageDialog.buttonDialog'.tr(),
-              onPress: () => Navigator.pop(context));
-        });
+      context: context,
+      builder: (context) {
+        return customShowAlertDialog(
+          title: 'errorMessageDialog.titleDialog'.tr(),
+          content: message,
+          buttonText: 'errorMessageDialog.buttonDialog'.tr(),
+          onPress: () => Navigator.pop(context),
+        );
+      },
+    );
   }
 
   @override
@@ -106,9 +140,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   controller: _controllerPassword,
                   obscureText: true,
                   showVisibilityIcon: true,
-                  icon: const Icon(
-                    Icons.lock,
-                  ),
+                  icon: const Icon(Icons.lock),
                   hintText: 'register.password'.tr(),
                   validateEmail: false,
                   fieldType: FieldType.password,
@@ -143,13 +175,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               textButton(
-                  text: 'login.login'.tr(),
-                  onPress: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                  color: rPrimaryColor)
+                text: 'login.login'.tr(),
+                onPress: () {
+                  Navigator.pushNamed(context, '/login');
+                },
+                color: rPrimaryColor,
+              ),
             ],
-          )
+          ),
         ],
       ),
     );

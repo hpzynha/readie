@@ -55,7 +55,16 @@
         "titleDialog": "Login Failed",
         "buttonDialog": "OK",
         "errorMessageLogin": "Wrong username or password. Please try again!",
-        "errorMessagePassword": "Passwords do not match. Please try again!"
+        "errorMessagePassword": "Passwords do not match. Please try again!",
+        "emailAlreadyInUse": "This email is already in use by another account.",
+        "weakPassword": "The password is too weak. Use at least 6 characters.",
+        "invalidEmail": "The email provided is invalid.",
+        "genericError": "An unexpected error occurred. Please try again."
+    },
+    "errorDialog": {
+        "title": "Registration Error",
+        "emailAlreadyInUse": "This email is already registered.",
+        "okButton": "OK"
     },
     "forgotPassword": {
         "forgotPassword": "Forgot password?",

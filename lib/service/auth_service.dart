@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+
+import '../widgets/errorWidgets/dialog_error_widget.dart';
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -11,11 +14,26 @@ class AuthService {
   Future<void> signInWithEmailAndPassword({
     required String email,
     required String password,
+    required BuildContext context,
   }) async {
-    await _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+    try {
+      await _firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+    } on FirebaseAuthException catch (e) {
+      //Captura a exceção especifica do firebaseAuth
+      if (e.code == 'email-already-in-use') {
+        //exibir o popup informantdo que o e-mail já está cadastrado
+        emailAlreadyInUseDialog(context: context);
+      } else {
+        errorToRegisterEmailDialog(
+            content: 'Ocorreu um erro inesperado: $e', context: context);
+      }
+    } catch (e) {
+      errorToRegisterEmailDialog(
+          content: 'Ocorreu um erro inesperado: $e', context: context);
+    }
   }
 
   Future<void> createUserWithEmailAndPassword({

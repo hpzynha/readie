@@ -56,7 +56,17 @@
         "titleDialog": "Falha no login",
         "buttonDialog": "OK",
         "errorMessageLogin": "Nome de usuário ou senha incorretos. Tente novamente!",
-        "errorMessagePassword": "As senhas não coincidem. Tente novamente!"
+        "errorMessagePassword": "As senhas não coincidem. Tente novamente!",
+        "emailAlreadyInUse": "Este e-mail já está em uso por outra conta.",
+        "weakPassword": "A senha é muito fraca. Use pelo menos 6 caracteres.",
+        "invalidEmail": "O e-mail fornecido é inválido.",
+        "genericError": "Ocorreu um erro inesperado. Tente novamente."
+
+    },
+    "errorDialog": {
+        "title": "Erro ao cadastrar",
+        "emailAlreadyInUse": "Este e-mail já está cadastrado.",
+        "okButton": "OK"
     },
     "forgotPassword": {
         "forgotPassword": "Esqueceu a senha?",
@@ -69,4 +79,5 @@
         "emailRequired": "O e-mail é obrigatório",
         "passwordRequired": "A senha é obrigatória"
     }
+    
 }
