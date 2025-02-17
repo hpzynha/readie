@@ -1,49 +1,72 @@
 {
     "login": {
-        "welcome": "Bem vindo ao Readie",
-        "forgotPassword": "Esqueci minha senha",
+        "welcome": "Bem-vindo ao Readie",
         "subTextWelcome": "Entre agora e mergulhe numa comunidade feita para quem ama livros!",
-        "email": "Email",
+        "forgotPassword": "Esqueci minha senha",
+        "email": "E-mail",
         "password": "Senha",
         "login": "Entrar agora",
         "loginToUseTheApp": "Entre para usar o app",
-        "enterEmail": "Email",
-        "enterPassword": "Senha",
+        "enterEmail": "Digite seu e-mail",
+        "enterPassword": "Digite sua senha",
         "fieldCannotBeEmpty": "Campo obrigatório",
-        "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account.",
         "orLoginWith": "Ou",
         "googleButton": "Google",
         "dontHaveAnAccount": "Não tem uma conta?",
         "logo": "readie",
         "subLogo": "Leia, resenhe, inspire-se.",
-        "register": "Cadastre-se agora"
-        
-    },
-    "register": {
+        "register": "Cadastre-se agora",
         "createAccount": "Criar uma conta",
-        "register": "Cadastro",
-        "typeYourData": "Digite seus Dados",
-        "name": "Nome",
+        "typeYourData": "Digite seus dados",
         "lastName": "Sobrenome",
-        "email": "E-mail",
-        "password": "Senha",
-        "comfirmPassword": "Comfirme sua senha",
         "choosePassword": "Escolha uma senha",
-        "minimumCharacters": "Mínimo de 8 caracteres",
         "repeatPassword": "Repita a senha",
         "number": "(00) 00000-0000",
         "create": "Criar conta",
-        "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
+        "subtitleForgotPassword": "Não se preocupe! Isso acontece. Por favor, insira o endereço de e-mail vinculado à sua conta."
+    },
+    "register": {
+        "register": "Cadastro",
+        "personalInformation": "Insira suas informações pessoais",
+        "name": "Nome",
+        "enterName": "Digite seu nome",
+        "email": "E-mail",
+        "password": "Senha",
+        "comfirmPassword": "Confirme sua senha",
+        "minimumCharacters": "Mínimo de 8 caracteres",
+        "successCreatedAccount": "Sua conta foi criada com sucesso. Verifique seu e-mail.",
         "backToLogin": "Voltar para a tela de login",
         "passwordNotMacth": "As senhas devem ser iguais",
         "fieldCannotBeEmpty": "Campo obrigatório",
-        "alreadyAmember": "Já tem uma conta?"
+        "orRegisterWith": "Ou registre-se com",
+        "alreadyAmember": "Já tem uma conta?",
+        "createAccount": "Criar uma conta",
+        "typeYourData": "Digite seus dados",
+        "lastName": "Sobrenome",
+        "choosePassword": "Escolha uma senha",
+        "repeatPassword": "Repita a senha",
+        "number": "(00) 00000-0000",
+        "create": "Criar conta"
     },
-
     "splash": {
         "logo": "readie",
         "subLogo": "Leia, resenhe, inspire-se."
+    },
+    "errorMessageDialog": {
+        "titleDialog": "Falha no login",
+        "buttonDialog": "OK",
+        "errorMessageLogin": "Nome de usuário ou senha incorretos. Tente novamente!",
+        "errorMessagePassword": "As senhas não coincidem. Tente novamente!"
+    },
+    "forgotPassword": {
+        "forgotPassword": "Esqueceu a senha?",
+        "subtitleForgotPassword": "Não se preocupe! Isso acontece. Por favor, insira o endereço de e-mail vinculado à sua conta.",
+        "email": "E-mail",
+        "enterEmail": "Digite seu e-mail",
+        "sendCode": "Enviar Código"
+    },
+    "errorMessage": {
+        "emailRequired": "O e-mail é obrigatório",
+        "passwordRequired": "A senha é obrigatória"
     }
-
-    
 }

@@ -1,4 +1,4 @@
-{   
+{
     "login": {
         "welcome": "Welcome to Readie",
         "subTextWelcome": "Log in to explore and connect with fellow book lovers",
@@ -13,10 +13,16 @@
         "orLoginWith": "Or login with",
         "googleButton": "Google",
         "dontHaveAnAccount": "Don't have an account?",
-         "logo": "readie",
-        "subLogo": "Leia, resenhe, inspire-se.",
-        "register": "Register"
-       
+        "logo": "readie",
+        "subLogo": "Read, review, get inspired.",
+        "register": "Register",
+        "createAccount": "Create an account",
+        "typeYourData": "Enter your data",
+        "lastName": "Last Name",
+        "choosePassword": "Choose a password",
+        "repeatPassword": "Repeat password",
+        "number": "(00) 00000-0000",
+        "create": "Create account"
     },
     "register": {
         "register": "Register",
@@ -25,38 +31,41 @@
         "enterName": "Enter your name",
         "email": "Email",
         "password": "Password",
-        "comfirmPassword": "Comfirm Password",
-        "minimumCharacters": "Mínimo de 8 caracteres",    
-        "successCreatedAccount": "Sua conta foi criada com sucesso verifique seu e-mail.",
-        "backToLogin": "Voltar para a tela de login",
-        "passwordNotMacth": "As senhas devem ser iguais",
+        "comfirmPassword": "Confirm Password",
+        "minimumCharacters": "Minimum of 8 characters",
+        "successCreatedAccount": "Your account has been successfully created. Check your email.",
+        "backToLogin": "Back to login screen",
+        "passwordNotMacth": "Passwords must match",
         "fieldCannotBeEmpty": "Field cannot be empty",
         "orRegisterWith": "Or register with",
-        "alreadyAmember": "Already a member?"
+        "alreadyAmember": "Already a member?",
+        "createAccount": "Create an account",
+        "typeYourData": "Enter your data",
+        "lastName": "Last Name",
+        "choosePassword": "Choose a password",
+        "repeatPassword": "Repeat password",
+        "number": "(00) 00000-0000",
+        "create": "Create account"
     },
     "splash": {
         "logo": "readie",
-        "subLogo": "Leia, resenhe, inspire-se."
+        "subLogo": "Read, review, get inspired."
     },
-    "errorMessageDialog":{
+    "errorMessageDialog": {
         "titleDialog": "Login Failed",
         "buttonDialog": "OK",
         "errorMessageLogin": "Wrong username or password. Please try again!",
         "errorMessagePassword": "Passwords do not match. Please try again!"
-
-       
     },
-
-    "forgotPassword":{
+    "forgotPassword": {
         "forgotPassword": "Forgot password?",
         "subtitleForgotPassword": "Don’t worry! It occurs. Please enter the email address linked with your account.",
         "email": "Email",
         "enterEmail": "Enter your email",
         "sendCode": "Send Code"
     },
-    "errorMessage":{
+    "errorMessage": {
         "emailRequired": "Email is required",
         "passwordRequired": "Password is required"
     }
-    
 }
