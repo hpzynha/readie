@@ -1,7 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:readie/style.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:readie/styles/colors.dart';
 
 enum FieldType {
   email,
@@ -112,7 +113,8 @@ class _CustomAuthTextFormFieldState extends State<CustomAuthTextFormField> {
               floatingLabelBehavior: FloatingLabelBehavior.always,
               contentPadding: const EdgeInsets.only(left: 8, bottom: 16),
               errorText: _showError ? errorText : null,
-              hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
+              hintStyle:
+                  GoogleFonts.lato(fontSize: 16, color: rSecondaryTextColor),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
                 borderSide: BorderSide(

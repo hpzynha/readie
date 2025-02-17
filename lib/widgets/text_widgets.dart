@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_image/flutter_svg_image.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 
 Widget textTitle({required String title, required String text}) {
   return Row(

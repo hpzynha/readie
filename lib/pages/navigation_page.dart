@@ -5,7 +5,7 @@ import 'package:readie/pages/home_page.dart';
 import 'package:readie/pages/my_books.dart';
 
 import 'package:readie/pages/user_page.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 
 class NavigationPage extends StatefulWidget {
   const NavigationPage({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/custom_search_bar.dart';
 
 class MyBooksPage extends StatelessWidget {

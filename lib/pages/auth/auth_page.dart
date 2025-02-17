@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:readie/pages/auth/login_page.dart';
 import 'package:readie/pages/navigation_page.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});

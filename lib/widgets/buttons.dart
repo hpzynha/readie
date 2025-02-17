@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton(
@@ -25,8 +25,11 @@ class PrimaryButton extends StatelessWidget {
           ),
           child: Text(
             title,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+            style: GoogleFonts.lato(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: rBackgroundColor,
+            ),
           ),
         ),
       ),
@@ -51,7 +54,7 @@ Widget textButton({
     ),
     child: Text(
       text,
-      style: TextStyle(color: color, fontSize: 16),
+      style: GoogleFonts.lato(color: color, fontSize: 16),
     ),
   );
 }

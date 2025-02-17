@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 
 class CustomGrid extends StatelessWidget {
   const CustomGrid({super.key});

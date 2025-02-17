@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:readie/pages/auth/forgot_password_page.dart';
 import 'package:readie/service/auth_service.dart';
 
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/custom_auth_text_form_field.dart';
@@ -143,7 +144,8 @@ class _LoginPageState extends State<LoginPage> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text('login.orLoginWith'.tr(),
-                            style: TextStyle(color: rSecondaryTextColor)),
+                            style:
+                                GoogleFonts.lato(color: rSecondaryTextColor)),
                       ),
                       Expanded(
                           child: Divider(
@@ -167,9 +169,9 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('login.dontHaveAnAccount'.tr(),
-                          style: const TextStyle(
+                          style: GoogleFonts.lato(
                             fontSize: 16,
-                            color: Colors.black,
+                            color: rTertiart,
                           )),
                       textButton(
                           text: 'login.register'.tr(),

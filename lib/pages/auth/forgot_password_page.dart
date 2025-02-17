@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/custom_auth_text_form_field.dart';
 import 'package:readie/widgets/text_widgets.dart';

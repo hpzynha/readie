@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:readie/pages/auth/auth_page.dart';
 
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/text_widgets.dart';
 
 class SplashPage extends StatelessWidget {

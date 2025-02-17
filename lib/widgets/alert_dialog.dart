@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:readie/style.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/buttons.dart';
 
 Widget customShowAlertDialog({
@@ -16,9 +17,7 @@ Widget customShowAlertDialog({
     ),
     content: Text(
       content,
-      style: const TextStyle(
-        fontSize: 16,
-      ),
+      style: GoogleFonts.lato(fontSize: 16),
     ),
     actions: [textButton(text: 'OK', onPress: onPress, color: rPrimaryColor)],
   );

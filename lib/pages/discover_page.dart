@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:readie/style.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/custom_grid.dart';
 import 'package:readie/widgets/custom_search_bar.dart';
 
@@ -35,28 +36,27 @@ class _DiscoverPageState extends State<DiscoverPage> {
       ),
       body: Column(
         children: [
-          const Row(
+          Row(
             children: [
-              Text(
-                'Popular Genres',
-                style: TextStyle(fontSize: 24, color: Colors.black),
-              ),
+              Text('Popular Genres',
+                  style: GoogleFonts.lato(fontSize: 24, color: rTertiart)),
             ],
           ),
           const Expanded(child: CustomGrid()),
           GestureDetector(
             onTap: () {},
-            child: const Row(
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
                   'Explore all genres',
-                  style: TextStyle(
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
+                  style: GoogleFonts.lato(
+                    fontSize: 18,
+                    color: rTertiart,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                Icon(Icons.arrow_forward)
+                const Icon(Icons.arrow_forward)
               ],
             ),
           ),

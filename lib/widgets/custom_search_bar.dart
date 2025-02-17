@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:readie/pages/search_result_page.dart';
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({

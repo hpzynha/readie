@@ -1,8 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import 'package:readie/style.dart';
+import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/custom_auth_text_form_field.dart';
@@ -134,11 +135,13 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('register.alreadyAmember'.tr(),
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                  )),
+              Text(
+                'register.alreadyAmember'.tr(),
+                style: GoogleFonts.lato(
+                  fontSize: 16,
+                  color: rTertiart,
+                ),
+              ),
               textButton(
                   text: 'login.login'.tr(),
                   onPress: () {
