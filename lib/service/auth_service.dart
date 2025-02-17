@@ -1,8 +1,11 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import '../widgets/errorWidgets/dialog_error_widget.dart';
+import '../widgets/alert_dialog.dart';
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -25,14 +28,12 @@ class AuthService {
       //Captura a exceção especifica do firebaseAuth
       if (e.code == 'email-already-in-use') {
         //exibir o popup informantdo que o e-mail já está cadastrado
-        emailAlreadyInUseDialog(context: context);
+        showErrorMessage(context, 'errorDialog.emailAlreadyInUse'.tr());
       } else {
-        errorToRegisterEmailDialog(
-            content: 'Ocorreu um erro inesperado: $e', context: context);
+        showErrorMessage(context, 'Ocorreu um erro inesperado: $e');
       }
     } catch (e) {
-      errorToRegisterEmailDialog(
-          content: 'Ocorreu um erro inesperado: $e', context: context);
+      showErrorMessage(context, 'Ocorreu um erro inesperado: $e');
     }
   }
 
@@ -68,5 +69,19 @@ class AuthService {
 
   signOut() {
     _firebaseAuth.signOut();
+  }
+
+  void showErrorMessage(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return customShowAlertDialog(
+          title: 'errorMessageDialog.titleDialog'.tr(),
+          content: message,
+          buttonText: 'errorMessageDialog.buttonDialog'.tr(),
+          onPress: () => Navigator.pop(context),
+        );
+      },
+    );
   }
 }
