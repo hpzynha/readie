@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:readie/styles/colors.dart';
-import 'package:readie/widgets/alert_dialog.dart';
+import 'package:readie/widgets/dialogs/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/custom_auth_text_form_field.dart';
 import 'package:readie/widgets/text_widgets.dart';

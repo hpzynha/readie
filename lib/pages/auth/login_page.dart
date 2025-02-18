@@ -5,7 +5,7 @@ import 'package:readie/pages/auth/forgot_password_page.dart';
 import 'package:readie/service/auth_service.dart';
 
 import 'package:readie/styles/colors.dart';
-import 'package:readie/widgets/alert_dialog.dart';
+import 'package:readie/widgets/dialogs/alert_dialog.dart';
 import 'package:readie/widgets/buttons.dart';
 import 'package:readie/widgets/custom_auth_text_form_field.dart';
 
@@ -47,6 +47,9 @@ class _LoginPageState extends State<LoginPage> {
       );
       if (mounted) {
         Navigator.pop(context);
+      }
+      if (mounted) {
+        Navigator.pushReplacementNamed(context, '/navigation');
       }
     } on FirebaseAuthException {
       if (mounted) {

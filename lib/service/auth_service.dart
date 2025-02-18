@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import '../widgets/alert_dialog.dart';
+import '../widgets/dialogs/alert_dialog.dart';
 
 class AuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -29,11 +29,27 @@ class AuthService {
       if (e.code == 'email-already-in-use') {
         //exibir o popup informantdo que o e-mail já está cadastrado
         showErrorMessage(context, 'errorDialog.emailAlreadyInUse'.tr());
+      } else if (e.code == "user-not-found" || e.code == 'wrong-password') {
+        showErrorMessage(
+          context,
+          'errorMessageDialog.invalidCredentials'.tr(),
+        );
+      } else if (e.code == 'invalid-email') {
+        showErrorMessage(
+          context,
+          'errorMessageDialog.invalidEmail'.tr(),
+        );
       } else {
-        showErrorMessage(context, 'Ocorreu um erro inesperado: $e');
+        showErrorMessage(
+          context,
+          'errorMessageDialog.genericError'.tr(),
+        );
       }
     } catch (e) {
-      showErrorMessage(context, 'Ocorreu um erro inesperado: $e');
+      showErrorMessage(
+        context,
+        'errorMessageDialog.genericError'.tr(),
+      );
     }
   }
 
