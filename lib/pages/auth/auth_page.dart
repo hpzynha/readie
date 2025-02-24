@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:readie/pages/auth/login_page.dart';
-import 'package:readie/pages/navigation_page.dart';
+import 'package:readie/pages/home_page.dart';
+
 import 'package:readie/styles/colors.dart';
 
 class AuthPage extends StatefulWidget {
@@ -49,7 +50,7 @@ class _AuthPageState extends State<AuthPage> {
           return _buildLoadingIndicator();
         } else {
           if (snapshot.hasData) {
-            return const NavigationPage();
+            return const HomePage();
           } else {
             return const LoginPage();
           }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:readie/styles/colors.dart';
-import 'package:readie/widgets/custom_search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,19 +8,9 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Expanded(
+          const Expanded(
             child: Row(
-              children: [
-                const SizedBox(width: 20),
-                const CustomSearchBar(),
-                IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.notifications,
-                      size: 35,
-                      color: rPrimaryColor,
-                    ))
-              ],
+              children: [SizedBox(width: 20), Text('oii')],
             ),
           )
         ],
