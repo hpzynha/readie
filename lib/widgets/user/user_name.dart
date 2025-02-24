@@ -9,7 +9,7 @@ Widget userName({required String name}) {
       Text(
         'Bem Vindo, ',
         style: GoogleFonts.lato(
-          fontSize: 22,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
           color: rTertiart,
         ),
@@ -17,7 +17,7 @@ Widget userName({required String name}) {
       Text(
         name,
         style: GoogleFonts.lato(
-          fontSize: 22,
+          fontSize: 20,
           fontWeight: FontWeight.bold,
           color: rTertiart,
         ),

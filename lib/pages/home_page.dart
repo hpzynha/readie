@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:readie/styles/colors.dart';
 import 'package:readie/widgets/user/user_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../widgets/notifications.dart';
 import '../widgets/text_widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,9 +26,7 @@ class HomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 userName(name: userNameText),
-                Icon(
-                  Icons.percent,
-                ),
+                iconNotification(),
               ],
             ),
           ],
